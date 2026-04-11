@@ -1,0 +1,17 @@
+<div class="flex flex-col md:flex-row p-3 gap-4 md:pt-4 md:pb-4 items-center justify-center text-black">
+    <div class="list-group">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .list-group {
+        width: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+        .list-group {
+            width: 100%;
+        }
+    }
+</style>

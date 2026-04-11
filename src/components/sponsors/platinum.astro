@@ -1,0 +1,49 @@
+---
+const CoHost = [
+    {
+        name: "",
+        src: "/sponsors/angkasapura2.png",
+    },
+    {
+        name: "",
+        src: "/sponsors/ptpii.png",
+    },
+    {
+        name: "",
+        src: "/sponsors/indosatooredoo.png",
+    },
+    {
+        name: "",
+        src: "/sponsors/bankindonesia2.png",
+    },
+    {
+        name: "",
+        src: "/sponsors/klinikaku2.png",
+    },
+];
+---
+
+<div class="m-4 w-full mx-auto">
+    <div class="flex items-center justify-center mt-2 mb-3 w-full">
+        <h2
+            class="rounded-full bg-ncafa-3 text-white text-base sm:text-2xl lg:text-3xl lg:text-center px-6 py-1"
+        >
+            Platinum Sponsors
+        </h2>
+    </div>
+    <div
+        class="grid grid-cols-1 justify-center justify-items-center md:grid-cols-1 gap-2 py-4"
+    >
+        {
+            CoHost.map((cohost) => (
+                <div class="flex justify-center">
+                    <img
+                        class="h-auto w-3/4 rounded-lg"
+                        src={cohost.src}
+                        alt={cohost.name}
+                    />
+                </div>
+            ))
+        }
+    </div>
+</div>

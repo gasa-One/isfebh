@@ -1,0 +1,188 @@
+---
+import Jumbotron from "../../layouts/partials/Jumbotron.astro";
+import Paragraph from "../../layouts/components/Paragraph.astro";
+import Layout from "../../layouts/partials/Layout.astro";
+import Container from "../../layouts/partials/Container.astro";
+import Contact from "../../layouts/components/ContactSub.astro";
+import ContactContainer from "../../layouts/components/ContactContainer.astro";
+import Heading2 from "../../layouts/components/Heading2.astro";
+import DateSeminar from "../../layouts/components/DateSeminar.astro";
+import PriceSeminar from "../../layouts/components/PriceSeminar.astro";
+import Button from "../../layouts/helpers/Button.astro";
+import ButtonContainer from "../../layouts/helpers/ButtonContainer.astro";
+import HeadingJumbo from "../../layouts/components/HeadingJumbo.astro";
+import HeadingMini from "../../layouts/components/HeadingMini.astro";
+import Heading3 from "../../layouts/components/Heading3.astro";
+
+const response = await fetch(
+    "https://data.jetadmin.app/projects/inncafa/prod/googlesheets_fyr8/models/speakers",
+    {
+      headers: {
+        Authorization: 'Bearer ni1CIx0V8a43zSwsgVzLOlu0VeZKopHppgqOP5fI',
+      },
+    }
+  );
+  
+const data = await response.json();
+const speakersDB = data.results;
+---
+
+<Layout title="Conference">
+	<Jumbotron 
+	src="/jumbotron/seminar-3.webp" />
+	<Container>
+		<Paragraph
+			text="This conference gathers various academics, experts and professionals in their respective fields to provide alternative solutions that bridge the gap between theoretical perspectives and research findings in the academic world with practical realities in both the business and public sectors. It is hoped that this conference will also make a constructive contribution by providing recommendations for government policies, especially in the role of accountants in preventing fraudulent behavior, tax regulations, and policies in the capital market and money market sectors."
+		/>
+	</Container>
+	<Container>
+		<Heading2 text="Opening Speeches" />
+		{
+			speakersDB
+			.filter((speaker) => speaker.role === 'opening')
+			.map((speaker) => (
+				<div class="card card-side w-3/4 justify-center m-auto my-2 flex-col lg:flex-row">
+					<figure class="w-full lg:w-1/2 flex justify-center">
+					<img
+						data-te-lazy-delay="1500"
+						data-te-lazy-load-init
+						data-te-lazy-placeholder="https://place-hold.it/1321x583?text=Loading"
+						class="w-1/2"
+						src={speaker.mediaUrl}
+						alt={speaker.name}
+					/>
+					</figure>
+					<div class="card-body w-full lg:w-1/2 px-0">
+						<h2 class="text-md lg:text-3xl card-title text-black">{speaker.name}</h2>
+						<p class="text-md lg:text-xl text-black-500">{speaker.position}</p>
+					</div>
+				</div>
+			))
+		}
+		
+	</Container>
+	<Container>
+		<Heading2 text="Keynote Speeches" />
+		{
+			speakersDB
+			.filter((speaker) => speaker.role === 'keynote')
+			.map((speaker) => (
+				<div class="card card-side w-3/4 justify-center m-auto my-2 flex-col lg:flex-row">
+					<figure class="w-full lg:w-1/2 flex justify-center">
+					<img
+						class="w-1/2"
+						src={speaker.mediaUrl}
+						alt={speaker.name}
+					/>
+					</figure>
+					<div class="card-body w-full lg:w-1/2 px-0">
+						<h2 class="text-md lg:text-3xl card-title text-black">{speaker.name}</h2>
+						<p class="text-md lg:text-xl text-black-500">{speaker.position}</p>
+					</div>
+				</div>
+			))
+		}
+		
+	</Container>
+	<Container>
+		<Heading2 text="Speaker" />
+		<Heading3 text="Day 1"/>
+		{
+			speakersDB
+			.filter((speaker) => speaker.role === 'speaker')
+			.filter((speaker) => speaker.day === 1)
+			.sort((a, b) => a.sequence - b.sequence)
+			.map((speaker) => (
+				<div class="card card-side w-3/4 justify-center m-auto my-2 flex-col lg:flex-row">
+					<figure class="w-full lg:w-1/2 flex justify-center">
+					<img
+						class="w-1/2"
+						src={speaker.mediaUrl}
+						alt={speaker.name}
+					/>
+					</figure>
+					<div class="card-body w-full lg:w-1/2 px-0">
+						<h2 class="text-md lg:text-3xl card-title text-black">{speaker.name}</h2>
+						<p class="text-md lg:text-xl text-black-500">{speaker.position}</p>
+					</div>
+				</div>
+			))
+		}
+		<Heading3 text="Day 2"/>
+		{
+			speakersDB
+			.filter((speaker) => speaker.role === 'speaker')
+			.filter((speaker) => speaker.day === 2)
+			.sort((a, b) => a.sequence - b.sequence)
+			.map((speaker) => (
+				<div class="card card-side w-3/4 justify-center m-auto my-2 flex-col lg:flex-row">
+					<figure class="w-full lg:w-1/2 flex justify-center">
+					<img
+						class="w-1/2"
+						src={speaker.mediaUrl}
+						alt={speaker.name}
+					/>
+					</figure>
+					<div class="card-body w-full lg:w-1/2 px-0">
+						<h2 class="text-md lg:text-3xl card-title text-black">{speaker.name}</h2>
+						<p class="text-md lg:text-xl text-black-500">{speaker.position}</p>
+					</div>
+				</div>
+			))
+		}
+	</Container>
+	<Container>
+		<Heading2 text="Timeline" />
+		<DateSeminar />
+	</Container>
+	<Container>
+		<Heading2 text="Price" />
+		<PriceSeminar/>
+	</Container>
+	<Container>
+		<Heading2 text="Registration" />
+		<ButtonContainer>
+			<Button
+				href="https://bit.ly/ConferenceInNCAFA"
+				class="fa-solid fa-user-plus"
+				title="Conference Registration"
+				description="Click this button to registration."
+			/>
+		</ButtonContainer>
+	</Container>
+	<Container>
+		<Heading2 text="Contact Us" />
+		<ContactContainer>
+			<Contact
+					media="WhatsApp"
+					,
+					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+					,
+					text="+62 895-3399-24610 (Mr. Satrio)"
+					,
+					href="https://wa.me/62895339924610"
+					,
+				/>
+			<Contact
+				media="Email"
+				,
+				class="fa-regular fa-envelope fa-2xl py-3 text-black"
+				,
+				text="in-ncafa@trilogi.ac.id"
+				,
+				href=""
+				,
+			/>
+			<Contact
+				media="Instagram"
+				,
+				class="fa-brands fa-instagram fa-2xl py-3 text-black"
+				,
+				text="@in.ncafatrilogi"
+				,
+				href="https://www.instagram.com/in.ncafatrilogi"
+				,
+			/>
+		</ContactContainer>
+	</Container>
+</Layout>

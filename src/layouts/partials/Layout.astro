@@ -1,0 +1,51 @@
+---
+import NavigationBar from "./NavigationBar.astro";
+import NavBarTop from "./NavBarTop.astro";
+import Container from "./Container.astro";
+import Footer from "./Footer.astro";
+import Warning from "../helpers/Warning.astro";
+
+export const prerender = true;
+export interface props {
+    title: string;
+}
+
+const { title } = Astro.props
+
+// Access the current URL
+const currentPath = Astro.url.pathname;
+
+// Check if the current path matches `/2024/`
+const shouldShowWarning = currentPath === '/2024';
+---
+
+<!doctype html>
+<html lang="en" data-theme="light" class="bg-white">
+    <head>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title} -  2nd Int'l & 5th Nat'l CAFA 2024</title>
+        <link
+			rel="icon"
+			type="image/svg+xml"
+			href="/icon/ncafa-icon.webp"
+		/>
+    </head>
+    <body class="min-h-full block">
+        {shouldShowWarning && <Warning/>}
+        <NavigationBar/>
+        <slot />
+        <Footer />
+        <script
+            src="https://kit.fontawesome.com/36090d8799.js"
+            crossorigin="anonymous"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,800;1,200;1,400;1,600;1,800&display=swap");
+
+            *{
+                font-family: "Plus Jakarta Sans";
+            }
+        </style>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+---
+export interface Props {
+    href: string;
+    class: string;
+    title: string;
+    description: string;
+}
+
+const {href, class: className, title, description} = Astro.props
+---
+
+<a
+    href={href}
+    class="relative hover:bg-[#d1d5db] rounded-full border-amber-300 cursor-pointer block py-3 px-6 -mb-px border border-gray-300 no-underline w-fill flex gap-3 py-3 items-center animate__animated "
+    aria-current="true"
+    target="_blank"
+>
+    <i class={className}></i>
+    <div class="flex gap-2 w-full justify-between">
+        <div>
+            <h6 class="text-sm lg:text-xl mb-0">{title}</h6>
+            <p class="text-xs lg:text-lg mb-0 opacity-75">
+                {description}
+            </p>
+        </div>
+    </div>
+</a>

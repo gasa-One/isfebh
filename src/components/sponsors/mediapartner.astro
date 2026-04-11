@@ -1,0 +1,42 @@
+---
+const CoHost = [
+    {
+        name: "",
+        src: "/mediapartner/eventdetect2.png",
+    },
+    {
+        name: "",
+        src: "/mediapartner/eventnyamahasiswa2.png",
+    },
+    {
+        name: "",
+        src: "/mediapartner/pointkampus2.png",
+    },
+    
+];
+---
+
+<div class="m-4 w-full mx-auto">
+    <div class="flex items-center justify-center mt-2 mb-3 w-full">
+        <h2
+            class="rounded-full bg-ncafa-3 text-white text-base sm:text-2xl lg:text-3xl lg:text-center px-6 py-1"
+        >
+            Media Partner
+        </h2>
+    </div>
+    <div
+        class="w-3/4 lg:w-1/2 grid grid-cols-auto justify-center justify-items-center md:grid-cols-6 gap-2 py-4 m-auto"
+    >
+        {
+            CoHost.map((cohost) => (
+                <div class="flex justify-center">
+                    <img
+                        class="h-auto w-2/3 rounded-lg"
+                        src={cohost.src}
+                        alt={cohost.name}
+                    />
+                </div>
+            ))
+        }
+    </div>
+</div>

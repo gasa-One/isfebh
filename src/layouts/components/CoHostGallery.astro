@@ -1,0 +1,64 @@
+---
+const CoHost = [
+    {
+        name: "",
+        src: "/cohost/dutawacana.png",
+    },
+    {
+        name: "",
+        src: "/cohost/esaunggul.png",
+    },
+    {
+        name: "",
+        src: "/cohost/ipwija.png",
+    },
+    {
+        name: "",
+        src: "/cohost/pancasila.png",
+    },
+    {
+        name: "",
+        src: "/cohost/tazkia.png",
+    },
+    {
+        name: "",
+        src: "/cohost/trisakti.png",
+    },
+    {
+        name: "",
+        src: "/cohost/uai.png",
+    },
+    {
+        name: "",
+        src: "/cohost/ubaya.png",
+    },
+    {
+        name: "",
+        src: "/cohost/ubhara.png",
+    },
+    {
+        name: "",
+        src: "/cohost/ubl.png",
+    },
+    {
+        name: "",
+        src: "/cohost/untar.png",
+    },
+];
+---
+
+<div
+    class="grid grid-cols-2 justify-center justify-items-center md:grid-cols-4 gap-2 py-4"
+>
+    {
+        CoHost.map((cohost) => (
+            <div class="flex justify-center">
+                <img
+                    class="h-auto w-1/2 rounded-lg"
+                    src={cohost.src}
+                    alt={cohost.name}
+                />
+            </div>
+        ))
+    }
+</div>

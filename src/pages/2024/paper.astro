@@ -1,0 +1,171 @@
+---
+import Jumbotron from "../../layouts/partials/Jumbotron.astro";
+import Paragraph from "../../layouts/components/Paragraph.astro";
+import Layout from "../../layouts/partials/Layout.astro";
+import Container from "../../layouts/partials/Container.astro";
+import Contact from "../../layouts/components/ContactSub.astro";
+import ContactContainer from "../../layouts/components/ContactContainer.astro";
+import Heading2 from "../../layouts/components/Heading2.astro";
+import Heading3 from "../../layouts/components/Heading3.astro";
+import PricePaper from "../../layouts/components/PricePaper.astro";
+import DatePaper from "../../layouts/components/DatePaper.astro";
+import SORContainer from "../../layouts/components/SORContainer.astro";
+import SOR from "../../layouts/components/SOR.astro";
+import Button from "../../layouts/helpers/Button.astro";
+import ButtonContainer from "../../layouts/helpers/ButtonContainer.astro";
+---
+
+<Layout title="Call for Paper">
+    <Jumbotron 
+    src="/jumbotron/paper-3.webp" />
+    <Container>
+        <Paragraph
+            text="As a form of contribution to the development of accounting science in Indonesia, it was jointly initiated by the Association of Certified Fraud Examiners (ACFE) Indonesia Chapter and the Association of Public Sector Accounting Educators (APSAE) which was also supported by the Indonesian Institute of Accountants (IAI) Compartment of Accountants Educators for DKI Jakarta Region. As well as during this conference trip, it was also held in collaboration with SINTA Accredited Journals, Index Copernicus, ProQuest, DOAJ, RePec, Google Scholar."
+        />
+    </Container>
+    <Container>
+        <Heading2 text="Scope of Research" />
+        <SORContainer>
+            <SOR
+                sor="Financial Accounting and Capital Markets (FACM)"
+                class="fa-solid fa-money-bill-trend-up fa-2xl pb-4"
+            />
+            <SOR
+                sor="Management and Behavioral Accounting (MBA)"
+                class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
+            />
+            <SOR
+                sor="Public Sector Accounting (PSA)"
+                class="fa-solid fa-user fa-2xl pb-4"
+            />
+            <SOR
+                sor="Sharia Accounting (SRA)"
+                class="fa-solid fa-star-and-crescent fa-2xl pb-4"
+            />
+            <SOR
+                sor="Fraud and Forensic Accounting (FFA)"
+                class="fa-solid fa-building-shield fa-2xl pb-4"
+            />
+            <SOR
+                sor="Accounting Education (AEd)"
+                class="fa-solid fa-graduation-cap fa-2xl pb-4"
+            />
+            <SOR sor="Taxation (TAX)" class="fa-solid fa-receipt fa-2xl pb-4" />
+            <SOR
+                sor="Information Systems, Auditing, and Professional Ethics (ISAPE)"
+                class="fa-solid fa-sitemap fa-2xl pb-4"
+            />
+            <SOR
+                sor="Governance & Sustainability Accounting (GSA)"
+                class="fa-solid fa-users-between-lines fa-2xl pb-4"
+            />
+        </SORContainer>
+    </Container>
+    <Container>
+        <Heading2 text="Timeline" />
+        <DatePaper />
+    </Container>
+    <!-- <Container>
+        <Heading2 text="Guideline" />
+        <TableGuideline />
+    </Container> -->
+    <Container>
+        <Heading2 text="Price" />
+        <PricePaper />
+    </Container>
+    <Container>
+        <Heading2 text="Submission and Registration" />
+        <ButtonContainer>
+            <Button
+                href="/paper/submission"
+                class="fa-solid fa-user-plus"
+                title="Paper Submission"
+                description="Click this button to submit your paper."
+            />
+        </ButtonContainer>
+        <ButtonContainer>
+            <Button
+                href="/paper/register"
+                class="fa-solid fa-user-plus"
+                title="Paper Registration"
+                description="Click this button to registration call for paper."
+            />
+        </ButtonContainer>
+    </Container>
+    <Container>
+        <Heading2 text="Paper Template" />
+            <ButtonContainer>
+                <Heading3
+                    text="International"
+                />
+                <Button
+                    href="https://drive.google.com/uc?export=download&id=1xkoK4UQxPrD0dIAhE5x3UwCHTAfpedc5"
+                    class="fa-solid fa-download"
+                    title="Abstract Template"
+                    description="Click this button to download Abstract Template."
+                />
+            </ButtonContainer>
+            <ButtonContainer>
+                <Button
+                    href="https://drive.google.com/uc?export=download&id=1XJPSratas5NUiJjqdDst0C441QH1jHVZ "
+                    class="fa-solid fa-download"
+                    title="Full Paper Template"
+                    description="Click this button to download Full Paper Template."
+                />
+            </ButtonContainer>
+            <ButtonContainer>
+                <Heading3
+                    text="National"
+                />
+                <Button
+                    href="https://drive.google.com/uc?export=download&id=1dVOGJ8wriRZFRpNodTjI-y5uhAY81Q32 "
+                    class="fa-solid fa-download"
+                    title="Abstract Template"
+                    description="Click this button to download Abstract Template."
+                />
+            </ButtonContainer>
+            <ButtonContainer>
+                <Button
+                    href="https://drive.google.com/uc?export=download&id=1Bfyo2FBobkycBCslRj9fBnu3I0q2gx_R"
+                    class="fa-solid fa-download"
+                    title="Full Paper Template"
+                    description="Click this button to download Full Paper Template."
+                />
+            </ButtonContainer>
+    </Container>
+    <Container>
+        <Heading2 text="Contact Us" />
+        <ContactContainer>
+            <Contact
+					media="WhatsApp"
+					,
+					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+					,
+					text="+62 851-5701-1792 (Ms. Endah)"
+					,
+					href="https://wa.me/6285157011792"
+					,
+				/>
+            <Contact
+                media="Email"
+                ,
+                class="fa-regular fa-envelope fa-2xl py-3 text-black"
+                ,
+                text="in-ncafa@trilogi.ac.id"
+                ,
+                href=""
+                ,
+            />
+            <Contact
+                media="Instagram"
+                ,
+                class="fa-brands fa-instagram fa-2xl py-3 text-black"
+                ,
+                text="@in.ncafatrilogi"
+                ,
+                href="https://www.instagram.com/in.ncafatrilogi"
+                ,
+            />
+        </ContactContainer>
+    </Container>
+</Layout>

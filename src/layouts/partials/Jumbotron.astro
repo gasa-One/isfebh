@@ -1,0 +1,10 @@
+---
+export interface Props {
+    src: string;
+}
+
+const { src } = Astro.props
+---
+<div class="relative w-full">
+    <img src={src} alt="" fetchpriority="high">
+</div>

@@ -1,0 +1,507 @@
+---
+import Jumbotron from "../../layouts/partials/Jumbotron.astro";
+import Paragraph from "../../layouts/components/Paragraph.astro";
+import Layout from "../../layouts/partials/Layout.astro";
+import Container from "../../layouts/partials/Container.astro";
+import ContactContainer from "../../layouts/components/ContactContainer.astro";
+import Heading2 from "../../layouts/components/Heading2.astro";
+import DateIndex from "../../layouts/components/DateIndex.astro";
+import ContainerScreen from "../../layouts/partials/ContainerScreen.astro";
+---
+
+<Layout title="Committee">
+	<Heading2
+					text="Committee"/>
+	<style>
+		tr > td:first-child {
+			text-align: right;
+			font-weight: bold;
+			width: 50%;
+		}
+	</style>
+	<div class="flex justify-center my-5 content-start">
+		<table class="flex mx-4">
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Visiting Lecturer (Senior), UUM College of Business,
+					Universiti Utara Malaysia</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Oluwatoyin Muse Johnson Popoola, Ph.D</td
+				>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Visiting Lecturer (Senior), UUM College of Business,
+					Universiti Utara Malaysia</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Abdulmalik Olarinoye Salau, PhD, MSc., BSc., CPA</td
+				>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Manager Micro-Credentials Unit, School of Management, USM</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Dr. Nik Hadiyan Nik Azman, Ph.D</td
+				>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Prince of Songkla University from Thailand</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Mr. Shebley Haslan Abdul Majid</td
+				>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Reader in Accounting Essex Business School, University of
+					Essex from England</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Professor Pawan Adhikari</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Project Officer</td>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Dr. Nurul Aisyah Rachmawati, S.E., M.S.Ak.</td
+				>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Vice Project Officer</td>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Lely Dahlia, S.E., M.Ak., CertIPSAS.
+				</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Frida Salsabila</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Secretary</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nilza Khayatinufus</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Niken Ayu Eka Kinanti</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Treasurer</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Rizka Ramayanti, S.E., M.Si.</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Ismi Amallia</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Zahara Syahfa Marliza</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Event Coordinator</td>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Novita, S.E., Ak., M.Ak., CSRS., CertIPSAS., CA.
+				</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Assistant Event Coordinator</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Andien Mirza Pratiwi</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Event Staff</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Salsabila Almas</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Muhammad Akmal Fadillah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Satrio Bagus Ramadhan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Novia Ramadhania Hermawan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nur Fadilah Putri</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Ellena Arindya Ambar Kinasih</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Athallah Akmal</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Billah Izza Muthmainnah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Shevia Zahira Putri Ramadhani
+				</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Call for Paper Coordinator</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Endah Dwi Putri</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Assistant Call for Paper Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Dinda Arviara Putri Wibowo</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Call for Paper Staff</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Selin Putri Cahyani</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nurul Yuliana</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Annisa Zahra Sabila</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Divalikya Ramadhani</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Diana Kurniawan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Reviewer &amp; Publication Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Dr. Anies Lastiati, S.E.Ak., MHRM., M.Ed.St., CA.
+				</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Assistant Reviewer &amp; Publication Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Yasmin Fitria</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Reviewer &amp; Publication Staff</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Nabiilah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Azahra Nur Alifah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Indri Damayanti Ismi</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Alya Muthia Riva</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Puja Hairani Siregar</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Alya Widiatrisyani</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Dea Fifiani Putri</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Michelle Dewi Novandi</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Moderator Parallel Session Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Annisa Nurul Jannah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Moderator Parallel Session Staff</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Irene Triwahyuni</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Hani Nur Angraini</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Puja Hairani Siregar</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Dwi Maharani Putri</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Shevia Zahira Putri Ramadhani
+				</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Vina Asokawati</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nova Asriyanti</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Vinna Ayu Agustine</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Risanti Dwita Puspa Zain</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Zakiah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Co Host Coordinator</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Almira Ayumi Prijanisa</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Assistant Co Host Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Fitri Hindarti</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Co Host Staff</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Annisa Aisyah Rahayu</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Irene Triwahyuni</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Annisa Nurul Jannah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nanda Ajeng Safitri</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Risanti Dwita Puspa Zain</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Vina Asokawati</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Naila Sahla</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Design &amp; Documentation Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Hani Nur Angraini</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Assistant Design &amp; Documentation Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Ade Retno Maharani</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Design &amp; Documentation Staff</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Diky Darmawan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nurul Yuliana</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Dwi Maharani Putri</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Technology Information &amp; Social Media Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Aditya Fadillah Azka</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Assistant Technology Information &amp; Social Media
+					Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Akmal Fikri Fadhiilah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Technology Information &amp; Social Media Staff</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Muhammad Rifli Agustian</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Ardhan Faturrahman</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">M. Zaki Rabbani</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>General Affair &amp; Equipment Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Varell Ari Yuana</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Assistant Staff Affair &amp; Equipment</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Akbar Maulana Ramadhan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Affair &amp; Equipment Staff</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Enggar Arya Fradhito</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Fadjar Dermawan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Muhammad Rifli Agustian</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">M. Rayhan Yusuf</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Dzaky Murtado</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">M. Syifa Qolby</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Ardhan Faturrahman</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Muhamad Rifqi</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">M. Zaki Rabbani</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Food &amp; Beverages Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Puja Hairani Siregar</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Assistant Food &amp; Beverages</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Zahara Syahfa Marliza</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Food &amp; Beverages Staff</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nova Asriyanti</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Sponsorship Coordinator</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Novia Ramadhania Hermawan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"
+					>Assistant Sponsorship Coordinator</td
+				>
+				<td class="text-sm lg:text-lg p-4 align-top">Vinna Ayu Agustine</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top">Sponsorship Staff</td>
+				<td class="text-sm lg:text-lg p-4 align-top">Satrio Bagus Ramadhan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nova Asriyanti</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Nur Fadilah Putri</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Ellena Arindya Ambar Kinasih</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Athallah Akmal</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Billah Izza Muthmainnah</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Varell Ari Yuana</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Akbar Maulana Ramadhan</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">M. Rayhan Yusuf</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Dzaky Murtado</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">M. Syifa Qolby</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Ardhan Faturrahman</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Muhamad Rifqi</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">M. Zaki Rabbani</td>
+			</tr>
+			<tr class="mb-5">
+				<td class="text-sm lg:text-lg p-4 align-top"></td>
+				<td class="text-sm lg:text-lg p-4 align-top">Enggar Arya Fradhito</td>
+			</tr>
+		</table>
+	</div>
+</Layout>

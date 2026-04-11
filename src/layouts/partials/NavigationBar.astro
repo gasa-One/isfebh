@@ -1,0 +1,90 @@
+---
+import NavBarTop from "./NavBarTop.astro";
+const menuItems = [
+  {
+    title: "Home",
+    path: "/2024",
+  },
+  {
+    title: "Conference",
+    path: "/2024/conference",
+  },
+  {
+    title: "Call for Paper",
+    path: "/2024/paper",
+    children: [
+      {
+        title:"Template",
+        path:"/2024/template",
+      }
+    ]
+  },
+  {
+    title: "Journal Partners",
+    path: "/2024/journalpartners",
+  },
+  {
+    title: "Co-Host",
+    path: "/2024/cohost",
+  },
+  {
+    title: "Committee",
+    path: "/2024/committee",
+  },
+  {
+    title: "Sponsors & Media Partners",
+    path: "/2024/sponsors",
+  },
+  {
+    title: "Contact Us",
+    path: "/2024/contact",
+  },
+];
+---
+
+<NavBarTop/>
+<div class="flex-wrap navbar h-auto bg-ncafa-4 w-full">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost lg:hidden text-black">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"></path></svg
+          >
+        </label>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white w-72 rounded-box gap-2 text-black"
+        >
+          {
+            menuItems.map((menu) => (
+              <li>
+                <a href={menu.path}>{menu.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+    <div class="navbar navbar-center justify-center items-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 text-white hover:text-white text-sm lg:text-lg xl:text-xl justify-center">
+        {
+          menuItems.map((menu) => (
+            <li>
+              <a href={menu.path}>{menu.title}</a>  
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="navbar-end">
+    </div>
+  </div>

@@ -1,0 +1,64 @@
+---
+const Event = [
+    {
+        date: "Wednesday, 7 February 2024",
+        name: "Session 1 - Hybrid",
+        place: "Auditorium Hall, 2nd Floor - Universitas Trilogi",
+        time: "08.00 am - 12.00 pm",
+        class: "timeline-start md:text-end md:text-xl mb-10"
+    },
+    {
+        date: "Wednesday, 7 February 2024",
+        name: "Session 1 - Hybrid",
+        place: "Auditorium Hall, 2nd Floor - Universitas Trilogi",
+        time: "08.00 am - 12.00 pm",
+        class: "timeline-end md:text-end md:text-xl mb-10"
+    },
+];
+---
+
+<ul
+    class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical text-black"
+>
+    <li>
+        <div class="timeline-middle">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+                ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd"></path></svg
+            >
+        </div>
+        <div class="timeline-start md:text-end md:text-xl mb-10">
+            <time class="text-lg lg:text-2xl">Tuesday, 6th February 2024</time>
+            <!-- <div class="text-md lg:text-xl text-sm">07.00am - 12.00pm</div> -->
+            <div class="md:text-xl text-sm font-black">Session 1 - Hybrid</div>
+            <div class="md:text-xl text-sm">Auditorium Hall, 2nd Floor - Universitas Trilogi & Zoom Cloud Meetings</div>
+        </div>
+        <hr />
+    </li>
+    <li>
+        <div class="timeline-middle">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+                ><path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd"></path></svg
+            >
+        </div>
+        <div class="timeline-end md:text-start mb-10">
+            <time class="text-lg lg:text-2xl">Wednesday, 7th February 2024</time>
+            <div class="md:text-xl text-sm font-black">Session 2 - Online</div>
+            <div class="md:text-xl text-sm">Zoom Cloud Meetings</div>
+
+        </div>
+    </li>
+</ul>

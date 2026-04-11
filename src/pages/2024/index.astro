@@ -1,0 +1,86 @@
+---
+import Jumbotron from "../../layouts/partials/Jumbotron.astro";
+import Paragraph from "../../layouts/components/Paragraph.astro";
+import Layout from "../../layouts/partials/Layout.astro";
+import Container from "../../layouts/partials/Container.astro";
+import ContactContainer from "../../layouts/components/ContactContainer.astro";
+import Contact from "../../layouts/components/ContactSub.astro";
+import Heading2 from "../../layouts/components/Heading2.astro";
+import DateIndex from "../../layouts/components/DateIndex.astro";
+import Button from "../../layouts/helpers/Button.astro";
+import ButtonContainer from "../../layouts/helpers/ButtonContainer.astro";
+---
+
+<Layout title="Home">
+	<!-- <PopUp/> -->
+	<Jumbotron src="/jumbotron/ncafa-desktop-2.webp" />
+	<Container>
+		<Paragraph
+			text="The theme of this year's conference is about Environment, Social, and Governance (ESG), because ESG criteria are one of the indicators used by stakeholders such as investors, companies, regulators, and the public in evaluating company performance. Companies that achieve high ESG standards tend to be perceived as more sustainable, responsible, and potentially more attractive to investors as well as consumers who are increasingly concerned about ESG issues. Therefore, ESG has become an important factor in investment decision making, as well as in the development of sustainable business strategies and corporate reporting. ESG is very relevant and important in business today because it can improve a company's reputation and image in the eyes of stakeholders, including customers, investors, employees, and society. Businesses committed to sustainable practices and social responsibility are often more respected and chosen by customers. Furthermore, it can be access to capital as many investors and financial institutions increasingly consider ESG factors in their investment decisions."
+		/>
+	</Container>
+	<Container>
+		<Heading2 text="Timeline" />
+		<DateIndex />
+	</Container>
+	<Container>
+		<div class="flex justify-center align-items-center flex-col">
+			<div class="flex justify-center">
+				<img class="w-[3/6] lg:w-1/2" src="/InNCAFA2024Poster.jpg" alt="" />
+			</div>
+			<ButtonContainer>
+				<a
+					href="/InNCAFA2024Poster.jpg"
+					class="relative hover:bg-[#d1d5db] rounded-full border-amber-300 cursor-pointer block py-3 px-6 -mb-px border border-gray-300 no-underline w-fill flex gap-3 py-3 items-center animate__animated"
+					aria-current="true"
+					download=""
+				>
+					<i class="fa-solid fa-download"></i>
+					<div class="flex gap-2 w-full justify-between">
+						<div>
+							<h6 class="mb-0 text-sm lg:text-base">Download Poster</h6>
+							<p class="mb-0 opacity-75 text-xs lg:text-base">
+								Click this button to download poster.
+							</p>
+						</div>
+					</div>
+				</a>
+			</ButtonContainer>
+		</div>
+	</Container>
+	<Container>
+		<Heading2 text="Contact Us" />
+		<ContactContainer>
+			<Contact
+				media="Email"
+				,
+				class="fa-regular fa-envelope fa-2xl py-3 text-black"
+				,
+				text="in-ncafa@trilogi.ac.id"
+				,
+				href="https://wa.me/6281288425931"
+				,
+			/>
+			<Contact
+				media="Instagram"
+				,
+				class="fa-brands fa-instagram fa-2xl py-3 text-black"
+				,
+				text="@in.ncafatrilogi"
+				,
+				href=""
+				,
+			/>
+			<Contact
+				media="LinkedIn"
+				,
+				class="fa-brands fa-linkedin fa-2xl py-3 text-black"
+				,
+				text="@in.ncafatrilogi"
+				,
+				href="https://www.linkedin.com/company/cafa-trilogi"
+				,
+			/>
+		</ContactContainer>
+	</Container>
+</Layout>

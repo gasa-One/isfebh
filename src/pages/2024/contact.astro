@@ -1,0 +1,102 @@
+---
+import Jumbotron from "../../layouts/partials/Jumbotron.astro";
+import Paragraph from "../../layouts/components/Paragraph.astro";
+import Layout from "../../layouts/partials/Layout.astro";
+import Container from "../../layouts/partials/Container.astro";
+import ContactSub from "../../layouts/components/ContactSub.astro"
+import ContactContainer from "../../layouts/components/ContactContainer.astro";
+import Heading2 from "../../layouts/components/Heading2.astro";
+import DateIndex from "../../layouts/components/DateIndex.astro";
+import ContainerScreen from "../../layouts/partials/ContainerScreen.astro";
+
+---
+
+		<Layout title="Contact">
+			<Jumbotron
+				src="/jumbotron/contactus-desktop.webp"
+			/>
+			<ContainerScreen>
+				<ContactContainer>
+					<ContactSub
+					media="WhatsApp (Conference)"
+					,
+					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+					,
+					text="+62 895-3399-24610 (Mr. Satrio)"
+					,
+					href="https://wa.me/62895339924610"
+					,
+				/>
+					<ContactSub
+					media="WhatsApp (Call for Paper)"
+					,
+					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+					,
+					text="+62 851-5701-1792 (Ms. Endah)"
+					,
+					href="https://wa.me/6285157011792"
+					,
+				/>
+					<ContactSub
+					media="WhatsApp (Journal Partners)"
+					,
+					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+					,
+					text="+62 838-7881-9292 (Ms. Yasmin)"
+					,
+					href="https://wa.me/6283878819292"
+					,
+				/>
+					<ContactSub
+					media="WhatsApp (Sponsors)"
+					,
+					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+					,
+					text="+62 881-1675-315 (Ms. Novia)"
+					,
+					href="https://wa.me/628811675315"
+					,
+				/>
+					<ContactSub
+					media="WhatsApp (Co-Host)"
+					,
+					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+					,
+					text="+62 838-0670-7035 (Ms. Almira)"
+					,
+					href="https://wa.me/6283806707035"
+					,
+				/>
+				<ContactSub
+					media="Email"
+					,
+					class="fa-regular fa-envelope fa-2xl py-3 text-black"
+					,
+					text="in-ncafa@trilogi.ac.id"
+					,
+					href=""
+					,
+					/>
+					<ContactSub
+					media="Instagram"
+					,
+					class="fa-brands fa-instagram fa-2xl py-3 text-black"
+					,
+					text="@in.ncafatrilogi"
+					,
+					href="https://www.instagram.com/in.ncafatrilogi"
+					,
+				/>
+					<ContactSub
+					media="LinkedIn"
+					,
+					class="fa-brands fa-linkedin fa-2xl py-3 text-black"
+					,
+					text="@in.ncafatrilogi"
+					,
+					href="https://www.linkedin.com/company/cafa-trilogi"
+					,
+				/>
+			</ContactContainer>
+		</ContainerScreen>
+		</Layout>

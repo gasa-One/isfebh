@@ -1,0 +1,14 @@
+[[redirects]]
+  from = "/2023/*"
+  to = "https://fourthinncafa.netlify.app/"
+  status = 301
+
+[[redirects]]
+  from = "/"
+  to = "/2024"
+  status = 301
+
+[[redirects]]
+  from = "/2025"
+  to = "/2025"
+  status = 301  

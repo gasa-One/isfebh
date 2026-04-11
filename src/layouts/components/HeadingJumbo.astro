@@ -1,0 +1,11 @@
+---
+export interface Props {
+    text: string;
+}
+
+const { text } = Astro.props
+---
+
+<div class="flex items-center justify-center mt-6 mb-4 w-full">
+    <h2 class=" text-grey text-2xl lg:text-3xl text-center px-6 py-1 tracking-widest">{text}</h2>
+</div>

@@ -1,0 +1,18 @@
+---
+export interface Props {
+    media:string;
+    class:string;
+    text: string;
+    href:string;
+}
+
+const { media, class:className, text, href } = Astro.props
+---
+
+<div class="card w-auto sm:w-96 text-neutral-content gap-5">
+    <div class="card-body items-center text-center px-1 py-2 gap-1">
+        <i class={className}></i>
+        <h2 class="text-black text-lg sm:text-2xl card-title">{media}</h2>
+        <a target="_blank" href={href}><p class="text-black link link-hover">{text}</p></a>
+    </div>
+</div>

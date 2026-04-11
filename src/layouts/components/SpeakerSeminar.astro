@@ -1,0 +1,37 @@
+---
+const Speaker = [
+    {
+        name: "Prof. Dr. Ratna Wardhani, S.E., M.Si.Ak., CA., CSRA*",
+        title: "Professor at the Faculty of Business Economics, University of Indonesia",
+        src: "/narasumber/avatar.png",
+    },
+    {
+        name: "Prof. Dr. Hasliza Abdul Halim*",
+        title: "DEPUTY DEAN - Research, Innovation and Industry - Community Network, USM",
+        src: "/narasumber/avatar.png",
+    },
+    {
+        name: "Dr. Pawan Adhikari*",
+        title: "Senior Lecturer in Accounting University of Essex, United Kingdom",
+        src: "/narasumber/avatar.png",
+    },
+];
+---
+
+{
+    Speaker.map((speaker) => (
+        <div class="card card-side w-3/4 justify-center m-auto my-2 flex-col lg:flex-row">
+            <figure class="w-full lg:w-1/2 flex justify-center">
+                <img
+                    class="w-1/2"
+                    src={speaker.src}
+                    alt={speaker.name}
+                />
+            </figure>
+            <div class="card-body w-full lg:w-1/2 px-0">
+                <h2 class="text-base lg:text-3xl card-title text-black">{speaker.name}</h2>
+                <p class="text-base lg:text-xl text-black-500">{speaker.title}</p>
+            </div>
+        </div>
+    ))
+}
