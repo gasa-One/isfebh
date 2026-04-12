@@ -1,65 +1,95 @@
 ---
 import Layout from "../layouts/partials/Layout.astro";
 import Container from "../layouts/partials/Container.astro";
+import Contact from "../layouts/components/ContactSub.astro";
+import ContactContainer from "../layouts/components/ContactContainer.astro";
 import Heading2 from "../layouts/components/Heading2.astro";
 import HeadingMini from "../layouts/components/HeadingMini.astro";
-
-const cohosts = [
-  {
-    name: "Universitas Trilogi",
-    logo: "https://via.placeholder.com/200x120",
-    website: "https://trilogi.ac.id"
-  },
-  {
-    name: "Partner University A",
-    logo: "https://via.placeholder.com/200x120",
-    website: "#"
-  },
-  {
-    name: "Research Institute B",
-    logo: "https://via.placeholder.com/200x120",
-    website: "#"
-  },
-  {
-    name: "International Partner C",
-    logo: "https://via.placeholder.com/200x120",
-    website: "#"
-  }
-];
 ---
 
 <Layout title="Co-Host">
 
   <Container>
-    <Heading2 text="Co-Host Institutions" />
+    <Heading2 text="Co-Host" />
 
-    <!-- GRID -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center my-8">
-
-      {
-        cohosts.map(item => (
-          <a href={item.website} target="_blank"
-             class="group w-[200px] bg-white p-4 rounded-xl shadow hover:shadow-lg transition duration-300 text-center">
-
-            <!-- LOGO -->
-            <div class="h-[100px] flex items-center justify-center mb-3">
-              <img class="max-h-full object-contain group-hover:scale-110 transition duration-300"
-                   src={item.logo} />
-            </div>
-
-            <!-- NAME -->
-            <p class="text-sm font-medium text-gray-700 group-hover:text-blue-600">
-              {item.name}
-            </p>
-
-          </a>
-        ))
-      }
-
+    <!-- LOADING -->
+    <div id="loading" class="text-center py-10 text-gray-500">
+      Loading co-host data...
     </div>
 
-    <HeadingMini text="More partners coming soon" />
+    <!-- GRID -->
+    <div id="cohost-container"
+         class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center my-6">
+    </div>
 
+    <HeadingMini text="more to be announce" />
+  </Container>
+
+  <!-- CONTACT -->
+  <Container>
+    <Heading2 text="Contact Us" />
+    <ContactContainer>
+      <Contact
+        media="WhatsApp"
+        class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+        text="+62 838-0670-7035 (Ms. Almira)"
+        href="https://wa.me/6283806707035"
+      />
+      <Contact
+        media="Email"
+        class="fa-regular fa-envelope fa-2xl py-3 text-black"
+        text="in-ncafa@trilogi.ac.id"
+        href=""
+      />
+    </ContactContainer>
   </Container>
 
 </Layout>
+
+<script>
+  const container = document.getElementById("cohost-container");
+  const loading = document.getElementById("loading");
+
+  async function fetchCohost() {
+    try {
+      const res = await fetch("https://data.jetadmin.app/projects/inncafa/prod/googlesheets_k55r/models/co-host", {
+        headers: {
+          Authorization: "Bearer q1ZPkHTDtpqjsmyyspYZ4B2ZK0nq0rqwliw4mCwT"
+        }
+      });
+
+      const data = await res.json();
+
+      loading.style.display = "none";
+      container.classList.remove("hidden");
+
+      container.innerHTML = data.results
+        .sort((a, b) => a.nama.localeCompare(b.nama))
+        .map(item => `
+          <a href="${item.url}" target="_blank"
+             class="group w-[220px] bg-white border rounded-xl shadow-md hover:shadow-xl transition duration-300 text-center overflow-hidden">
+
+            <!-- LOGO -->
+            <div class="h-[120px] flex items-center justify-center bg-gray-50 p-3">
+              <img class="max-h-full object-contain group-hover:scale-110 transition duration-300"
+                   src="${item.logo}" />
+            </div>
+
+            <!-- NAME -->
+            <div class="p-3">
+              <h5 class="text-sm font-semibold text-gray-700 group-hover:text-blue-600 transition">
+                ${item.nama}
+              </h5>
+            </div>
+
+          </a>
+        `).join("");
+
+    } catch (err) {
+      loading.innerText = "Failed to load co-host data";
+      console.error(err);
+    }
+  }
+
+  fetchCohost();
+</script>
