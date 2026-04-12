@@ -1,161 +1,109 @@
 ---
-import Paragraph from "../layouts/components/Paragraph.astro";
 import Layout from "../layouts/partials/Layout.astro";
 import Container from "../layouts/partials/Container2.astro";
 import Heading2 from "../layouts/components/Heading2.astro";
-import GallerySponsors from "../layouts/components/GallerySponsors.astro";
+import HeadingMini from "../layouts/components/HeadingMini.astro";
 import ContactContainer from "../layouts/components/ContactContainer.astro";
 import Contact from "../layouts/components/ContactSub.astro";
-import HeadingMini from "../layouts/components/HeadingMini.astro";
-
-const response = await fetch(
-	"https://data.jetadmin.app/projects/inncafa/prod/googlesheets_fyr8/models/sponsors_data",
-	{
-		headers: {
-			Authorization: "Bearer q1ZPkHTDtpqjsmyyspYZ4B2ZK0nq0rqwliw4mCwT",
-		},
-	},
-);
-
-const data = await response.json();
-const sponsorsDB = data.results;
 ---
 
 <Layout title="Sponsors">
-	<Container>
-		<div class="m-1 flex justify-center flex-col gap-4">
-			<!-- Platinum -->
-			<HeadingMini text="Platinum Sponsor" />
-			<div
-				class="flex flex-col flex-wrap justify-center justify-items-center"
-			>
-				{
-					sponsorsDB
-						.filter((sponsor) => sponsor.Paket === "Platinum")
-						.sort((a, b) => a.__jet_pk__ - b.__jet_pk__)
-						.map((sponsor: any) => (
-							<div class="max-w-sm bg-white flex justify-center items-center gap-4 m-4 w-full mx-auto">
-								<img
-									class="rounded-t-lg aspect-[4/3] object-contain w-full"
-									src={sponsor.MediaUrl}
-									alt={sponsor.Nama}
-								/>
-							</div>
-						))
-				}
-			</div>
-			<!-- Gold -->
-			<HeadingMini text="Gold Sponsor" />
-			<div
-				class="flex flex-row flex-wrap justify-center justify-items-center"
-			>
-				{
-					sponsorsDB
-						.filter((sponsor) => sponsor.Paket === "Gold")
-						.map((sponsor: any) => (
-							<div class="max-w-sm bg-white flex justify-center items-center w-4/5 gap-4 m-4">
-								<img
-									class="rounded-t-lg aspect-[4/3] object-contain w-4/5"
-									src={sponsor.MediaUrl}
-									alt={sponsor.Nama}
-								/>
-							</div>
-						))
-				}
-			</div>
-			<!-- Silver -->
-			<HeadingMini text="Silver Sponsor" />
-			<div
-				class="flex flex-row flex-wrap justify-center justify-items-center"
-			>
-				{
-					sponsorsDB
-						.filter((sponsor) => sponsor.Paket === "Silver")
-						.map((sponsor: any) => (
-							<div class="max-w-sm bg-white flex justify-center items-center gap-4 m-4">
-								<img
-									class="rounded-t-lg aspect-[4/3] object-contain w-3/5"
-									src={sponsor.MediaUrl}
-									alt={sponsor.Nama}
-								/>
-							</div>
-						))
-				}
-			</div>
-			<!-- Bronze -->
-			<HeadingMini text="Bronze Sponsor" />
-			<div
-				class="flex flex-row flex-wrap justify-center justify-items-center"
-			>
-				{
-					sponsorsDB
-						.filter((sponsor) => sponsor.Paket === "Bronze")
-						.sort((a, b) => a.__jet_pk__ - b.__jet_pk__)
-						.map((sponsor: any) => (
-							<div class="max-w-sm bg-white flex justify-center items-center gap-4 m-4">
-								<img
-									class="rounded-t-lg aspect-[4/3] object-contain w-2/5"
-									src={sponsor.MediaUrl}
-									alt={sponsor.Nama}
-								/>
-							</div>
-						))
-				}
-			</div>
-			<!-- Media Partner
-			<HeadingMini text="Media Partner Sponsor" />
-			<div
-				class="w-3/4 lg:w-1/2 grid grid-cols-7 col-start-3 justify-center justify-items-center md:grid-cols-7 gap-2 py-4 m-auto"
-			>
-				{
-					sponsorsDB
-						.filter((sponsor) => sponsor.Paket === "Media Partner")
-						.map((sponsor: any) => (
-							<div class="flex justify-center">
-								<img
-									class="h-auto w-2/3 rounded-lg"
-									src={sponsor.MediaUrl}
-									alt={sponsor.Nama}
-								/>
-							</div>
-						))
-				}
-			</div> -->
-		</div>
-	</Container>
-	<Container>
-		<Heading2 text="Contact Us" />
-		<ContactContainer>
-			<Contact
-				media="WhatsApp "
-				,
-				class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
-				,
-				text="+62 881-1675-315 (Ms. Novia)"
-				,
-				href="wa.me/628811675315"
-				,
-			/>
-			<Contact
-				media="Email"
-				,
-				class="fa-regular fa-envelope fa-2xl py-3 text-black"
-				,
-				text="in-ncafa@trilogi.ac.id"
-				,
-				href=""
-				,
-			/>
-			<Contact
-				media="Instagram"
-				,
-				class="fa-brands fa-instagram fa-2xl py-3 text-black"
-				,
-				text="@in.ncafatrilogi"
-				,
-				href="https://www.instagram.com/in.ncafatrilogi"
-				,
-			/>
-		</ContactContainer>
-	</Container>
+
+  <Container>
+    <div class="flex flex-col gap-10">
+
+      <!-- PLATINUM -->
+      <div>
+        <HeadingMini text="Platinum Sponsor" />
+        <div id="platinum" class="flex justify-center flex-wrap gap-6 mt-4"></div>
+      </div>
+
+      <!-- GOLD -->
+      <div>
+        <HeadingMini text="Gold Sponsor" />
+        <div id="gold" class="flex justify-center flex-wrap gap-6 mt-4"></div>
+      </div>
+
+      <!-- SILVER -->
+      <div>
+        <HeadingMini text="Silver Sponsor" />
+        <div id="silver" class="flex justify-center flex-wrap gap-6 mt-4"></div>
+      </div>
+
+      <!-- BRONZE -->
+      <div>
+        <HeadingMini text="Bronze Sponsor" />
+        <div id="bronze" class="flex justify-center flex-wrap gap-6 mt-4"></div>
+      </div>
+
+    </div>
+  </Container>
+
+  <!-- CONTACT -->
+  <Container>
+    <Heading2 text="Contact Us" />
+    <ContactContainer>
+      <Contact
+        media="WhatsApp"
+        class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+        text="+62 881-1675-315 (Ms. Novia)"
+        href="https://wa.me/628811675315"
+      />
+      <Contact
+        media="Email"
+        class="fa-regular fa-envelope fa-2xl py-3 text-black"
+        text="in-ncafa@trilogi.ac.id"
+        href=""
+      />
+      <Contact
+        media="Instagram"
+        class="fa-brands fa-instagram fa-2xl py-3 text-black"
+        text="@in.ncafatrilogi"
+        href="https://www.instagram.com/in.ncafatrilogi"
+      />
+    </ContactContainer>
+  </Container>
+
 </Layout>
+
+<script>
+  const endpoint = "https://data.jetadmin.app/projects/inncafa/prod/googlesheets_fyr8/models/sponsors_data";
+
+  async function fetchSponsors() {
+    try {
+      const res = await fetch(endpoint, {
+        headers: {
+          Authorization: "Bearer q1ZPkHTDtpqjsmyyspYZ4B2ZK0nq0rqwliw4mCwT"
+        }
+      });
+
+      const data = await res.json();
+      const sponsors = data.results;
+
+      renderSponsors("Platinum", "platinum", "w-full max-w-md");
+      renderSponsors("Gold", "gold", "w-64");
+      renderSponsors("Silver", "silver", "w-52");
+      renderSponsors("Bronze", "bronze", "w-40");
+
+      function renderSponsors(type, elementId, sizeClass) {
+        const container = document.getElementById(elementId);
+
+        container.innerHTML = sponsors
+          .filter(s => s.Paket === type)
+          .sort((a, b) => a.__jet_pk__ - b.__jet_pk__)
+          .map(s => `
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-4 flex items-center justify-center">
+              <img class="${sizeClass} object-contain hover:scale-105 transition"
+                   src="${s.MediaUrl}"
+                   alt="${s.Nama}" />
+            </div>
+          `).join("");
+      }
+
+    } catch (err) {
+      console.error("Error loading sponsors:", err);
+    }
+  }
+
+  fetchSponsors();
+</script>
