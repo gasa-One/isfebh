@@ -1,131 +1,167 @@
 ---
+import Jumbotron from "../layouts/partials/Jumbotron.astro";
+import Paragraph from "../layouts/components/Paragraph.astro";
 import Layout from "../layouts/partials/Layout.astro";
 import Container from "../layouts/partials/Container.astro";
+import Contact from "../layouts/components/ContactSub.astro";
+import ContactContainer from "../layouts/components/ContactContainer.astro";
 import Heading2 from "../layouts/components/Heading2.astro";
+import Heading3 from "../layouts/components/Heading3.astro";
+import DateSeminar from "../layouts/components/DateSeminar.astro";
+import PriceSeminar from "../layouts/components/PriceSeminar.astro";
+import Button from "../layouts/helpers/Button.astro";
+import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
+
+const openingSpeakers = [
+  {
+    name: "Prof. Dr. Example Opening",
+    position: "Rector, Trilogi University",
+    image: "https://via.placeholder.com/200"
+  }
+];
+
+const keynoteSpeakers = [
+  {
+    name: "Dr. Keynote Speaker",
+    position: "International Expert",
+    image: "https://via.placeholder.com/200"
+  }
+];
+
+const speakersDay1 = [
+  {
+    name: "Speaker 1",
+    position: "Accounting Expert",
+    image: "https://via.placeholder.com/200"
+  }
+];
+
+const speakersDay2 = [
+  {
+    name: "Speaker 2",
+    position: "Finance Specialist",
+    image: "https://via.placeholder.com/200"
+  }
+];
 ---
 
 <Layout title="Conference">
 
-  <!-- HERO -->
-  <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 text-center">
-    <h1 class="text-4xl font-bold mb-4">
-      International Conference on Accounting, Finance & Business (NCAFA)
-    </h1>
-    <p class="max-w-2xl mx-auto text-lg opacity-90">
-      Exploring the Future of ESG: Environment, Social, and Governance in Global Business
-    </p>
-  </div>
+  <!-- JUMBOTRON -->
+  <Jumbotron src="/jumbotron/seminar-3.webp" />
 
-  <!-- INFO -->
+  <!-- DESCRIPTION -->
   <Container>
-    <div class="grid md:grid-cols-3 gap-6 text-center my-10">
-
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-bold text-lg">📅 Date</h3>
-        <p>August 2026</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-bold text-lg">📍 Location</h3>
-        <p>Jakarta, Indonesia</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-bold text-lg">🎤 Mode</h3>
-        <p>Hybrid (Online & Offline)</p>
-      </div>
-
-    </div>
+    <Paragraph
+      text="This conference gathers academics and professionals to bridge theory and practice in accounting, finance, and business."
+    />
   </Container>
 
-  <!-- ABOUT -->
+  <!-- OPENING -->
   <Container>
-    <Heading2 text="About Conference" />
+    <Heading2 text="Opening Speeches" />
+    {
+      openingSpeakers.map((s) => (
+        <div class="flex flex-col lg:flex-row items-center gap-6 my-4 w-3/4 mx-auto">
+          <img class="w-40 rounded-lg shadow" src={s.image} />
+          <div>
+            <h2 class="text-xl font-bold">{s.name}</h2>
+            <p class="text-gray-500">{s.position}</p>
+          </div>
+        </div>
+      ))
+    }
+  </Container>
 
-    <p class="text-gray-600 mt-4 leading-relaxed text-justify">
-      This international conference aims to bring together researchers, academics,
-      and practitioners to discuss recent developments in accounting, finance,
-      and business. The focus of this year's conference is ESG (Environment,
-      Social, and Governance), which plays a crucial role in sustainable business
-      and investment decision-making.
-    </p>
+  <!-- KEYNOTE -->
+  <Container>
+    <Heading2 text="Keynote Speeches" />
+    {
+      keynoteSpeakers.map((s) => (
+        <div class="flex flex-col lg:flex-row items-center gap-6 my-4 w-3/4 mx-auto">
+          <img class="w-40 rounded-lg shadow" src={s.image} />
+          <div>
+            <h2 class="text-xl font-bold">{s.name}</h2>
+            <p class="text-gray-500">{s.position}</p>
+          </div>
+        </div>
+      ))
+    }
+  </Container>
+
+  <!-- SPEAKER -->
+  <Container>
+    <Heading2 text="Speaker" />
+
+    <Heading3 text="Day 1" />
+    {
+      speakersDay1.map((s) => (
+        <div class="flex flex-col lg:flex-row items-center gap-6 my-4 w-3/4 mx-auto">
+          <img class="w-40 rounded-lg shadow" src={s.image} />
+          <div>
+            <h2 class="text-xl font-bold">{s.name}</h2>
+            <p class="text-gray-500">{s.position}</p>
+          </div>
+        </div>
+      ))
+    }
+
+    <Heading3 text="Day 2" />
+    {
+      speakersDay2.map((s) => (
+        <div class="flex flex-col lg:flex-row items-center gap-6 my-4 w-3/4 mx-auto">
+          <img class="w-40 rounded-lg shadow" src={s.image} />
+          <div>
+            <h2 class="text-xl font-bold">{s.name}</h2>
+            <p class="text-gray-500">{s.position}</p>
+          </div>
+        </div>
+      ))
+    }
   </Container>
 
   <!-- TIMELINE -->
   <Container>
-    <Heading2 text="Important Dates" />
-
-    <div class="grid md:grid-cols-2 gap-6 mt-6">
-
-      <div class="bg-white p-4 rounded-lg shadow">
-        <p class="font-semibold">📌 Abstract Submission</p>
-        <p class="text-gray-500">June 10, 2026</p>
-      </div>
-
-      <div class="bg-white p-4 rounded-lg shadow">
-        <p class="font-semibold">📌 Full Paper Submission</p>
-        <p class="text-gray-500">June 25, 2026</p>
-      </div>
-
-      <div class="bg-white p-4 rounded-lg shadow">
-        <p class="font-semibold">📌 Notification</p>
-        <p class="text-gray-500">July 10, 2026</p>
-      </div>
-
-      <div class="bg-white p-4 rounded-lg shadow">
-        <p class="font-semibold">📌 Conference Date</p>
-        <p class="text-gray-500">August 2026</p>
-      </div>
-
-    </div>
+    <Heading2 text="Timeline" />
+    <DateSeminar />
   </Container>
 
-  <!-- CALL FOR PAPERS -->
+  <!-- PRICE -->
   <Container>
-    <Heading2 text="Call for Papers" />
-
-    <div class="grid md:grid-cols-2 gap-6 mt-6">
-
-      <ul class="list-disc pl-5 text-gray-600 space-y-2">
-        <li>Accounting & Auditing</li>
-        <li>Corporate Governance</li>
-        <li>Financial Technology</li>
-        <li>ESG & Sustainability</li>
-      </ul>
-
-      <ul class="list-disc pl-5 text-gray-600 space-y-2">
-        <li>Business Strategy</li>
-        <li>Economics & Development</li>
-        <li>Digital Transformation</li>
-        <li>Risk Management</li>
-      </ul>
-
-    </div>
+    <Heading2 text="Price" />
+    <PriceSeminar />
   </Container>
 
-  <!-- CTA -->
+  <!-- REGISTRATION -->
   <Container>
-    <div class="text-center my-12">
+    <Heading2 text="Registration" />
+    <ButtonContainer>
+      <Button
+        href="#"
+        class="fa-solid fa-user-plus"
+        title="Conference Registration"
+        description="Click this button to register."
+      />
+    </ButtonContainer>
+  </Container>
 
-      <h3 class="text-2xl font-bold mb-4">
-        Join the Conference
-      </h3>
-
-      <div class="flex justify-center gap-4 flex-wrap">
-
-        <a href="#"
-          class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-          Register Now
-        </a>
-
-        <a href="#"
-          class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition">
-          Submit Paper
-        </a>
-
-      </div>
-
-    </div>
+  <!-- CONTACT -->
+  <Container>
+    <Heading2 text="Contact Us" />
+    <ContactContainer>
+      <Contact
+        media="WhatsApp"
+        class="fa-brands fa-whatsapp"
+        text="+62 xxx"
+        href="#"
+      />
+      <Contact
+        media="Email"
+        class="fa-regular fa-envelope"
+        text="email@example.com"
+        href="#"
+      />
+    </ContactContainer>
   </Container>
 
 </Layout>
