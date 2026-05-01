@@ -32,6 +32,6 @@ export default defineConfig({
       "type": "image/png"
     }]
   })],
-  output: "server",
-  adapter: netlify()
+  output: "static"
+  
 });
