@@ -7,436 +7,91 @@ import Contact from "../layouts/components/ContactSub.astro";
 import ContactContainer from "../layouts/components/ContactContainer.astro";
 import Heading2 from "../layouts/components/Heading2.astro";
 import Heading3 from "../layouts/components/Heading3.astro";
-import PricePaper from "../layouts/components/PricePaper.astro";
-import DatePaper from "../layouts/components/DatePaper.astro";
 import SORContainer from "../layouts/components/SORContainer.astro";
 import SOR from "../layouts/components/SOR.astro";
 import Button from "../layouts/helpers/Button.astro";
 import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
----
 
 const events = [
-  {
-    date: "July 20th, 2026",
-	title: "Paper Submission Deadline", 
-	side: "left"
-  },
-  {
-    date: "August 7th, 2026",
-	title: "Paper Acceptance Announcement",
-	side: "right"
-  },
-  {
-    date: "August 14th, 2026",
-	title: "Registration & Payment Deadline",
-	side: "left"
-  },
-  {
-    date: "August 19th, 2026",
-	title: "Conference Day",
-	side: "right"
-  },
+  { date: "July 20th, 2026", title: "Paper Submission Deadline", side: "left" },
+  { date: "August 7th, 2026", title: "Paper Acceptance Announcement", side: "right" },
+  { date: "August 14th, 2026", title: "Registration & Payment Deadline", side: "left" },
+  { date: "August 19th, 2026", title: "Conference Day", side: "right" }
 ];
+---
 
 <Layout title="Call for Paper">
-    <Jumbotron 
-    src="/jumbotron/paper-3.webp" />
-    <Container>
-        <Paragraph
-            text="As a form of contribution to the development of accounting science in Indonesia, it was jointly initiated by the Association of Certified Fraud Examiners (ACFE) Indonesia Chapter and the Association of Public Sector Accounting Educators (APSAE) which was also supported by the Indonesian Institute of Accountants (IAI) Compartment of Accountants Educators for DKI Jakarta Region. As well as during this conference trip, it was also held in collaboration with SINTA Accredited Journals, Index Copernicus, ProQuest, DOAJ, RePec, Google Scholar."
-        />
-    </Container>
-    <Container>
-        <Heading2 text="International Conference on Accounting and Fraud Auditing (INCAFA)" />
-        <SORContainer>
-            <SOR
-                sor="Financial Accounting and Capital Markets (FACM)"
-                class="fa-solid fa-money-bill-trend-up fa-2xl pb-4"
-            />
-            <SOR
-                sor="Management and Behavioral Accounting (MBA)"
-                class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
-            />
-            <SOR
-                sor="Information Systems, Auditing, and Professional Ethics (SAPE)"
-                class="fa-solid fa-user fa-2xl pb-4"
-            />
-            <SOR
-                sor="Taxation (TAX)"
-                class="fa-solid fa-star-and-crescent fa-2xl pb-4"
-            />
-            <SOR
-                sor="Sharia Accounting (SRA)"
-                class="fa-solid fa-building-shield fa-2xl pb-4"
-            />
-            <SOR
-                sor="Governance and Sustainability Accounting (GSA)"
-                class="fa-solid fa-graduation-cap fa-2xl pb-4"
-            />
-            <SOR
-                sor="Fraud and Forensic Accounting (FFA)"
-                class="fa-solid fa-sitemap fa-2xl pb-4"
-            />
-            <SOR
-                sor="Public Sector Accounting (PSA)"
-                class="fa-solid fa-users-between-lines fa-2xl pb-4"
-            />
-			<SOR
-                sor="Accounting Education (AEd)"
-                class="fa-solid fa-users-between-lines fa-2xl pb-4"
-            />
-        </SORContainer>
-		<Heading2 text="International Conference on Education, Learning, and Digital Transformation (ICELDT 2026)"/>
-        <SORContainer>
-            <SOR
-                sor="Child Development and Learning"
-                class="fa-solid fa-money-bill-trend-up fa-2xl pb-4"
-            />
-            <SOR
-                sor="Early Childhood Education"
-                class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
-            />
-            <SOR
-                sor="Elementary Education"
-                class="fa-solid fa-user fa-2xl pb-4"
-            />
-            <SOR
-                sor="Digital Pedagody, Artificial Intelligence and Innovative Learning"
-                class="fa-solid fa-star-and-crescent fa-2xl pb-4"
-            />
-            <SOR
-                sor="Inclusive Digital Education"
-                class="fa-solid fa-building-shield fa-2xl pb-4"
-            />
-            <SOR
-                sor="Digital Assessment in Early Childhood and/or Primary Education"
-                class="fa-solid fa-graduation-cap fa-2xl pb-4"
-            />
-            <SOR
-				sor="Child Protection and Ethical use of digital technologies"
-				class="fa-solid fa-receipt fa-2xl pb-4" />
-            <SOR
-                sor="Teacher readiness for digital transformation"
-                class="fa-solid fa-sitemap fa-2xl pb-4"
-            />
-            <SOR
-                sor="Family Engagement in Digital Learning"
-                class="fa-solid fa-users-between-lines fa-2xl pb-4"
-            />
-            <SOR
-                sor="School-family partnerships"
-                class="fa-solid fa-users-between-lines fa-2xl pb-4"
-            />
-        </SORContainer>
-		<Heading2 text="International Conference on Management, Economics, and Digital Business (ICMEDB)"/>
-        <SORContainer>
-            <SOR
-                sor="Strategic and innovation management"
-                class="fa-solid fa-money-bill-trend-up fa-2xl pb-4"
-            />
-            <SOR
-                sor="Digital entrepreneurship and digital economics"
-                class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
-            />
-            <SOR
-                sor="Entrepreneurship, marketing management and consumber behavior"
-                class="fa-solid fa-user fa-2xl pb-4"
-            />
-            <SOR
-                sor="Organizational behavior and human resources studies"
-                class="fa-solid fa-star-and-crescent fa-2xl pb-4"
-            />
-            <SOR
-                sor="Industrial economics and development economics"
-                class="fa-solid fa-building-shield fa-2xl pb-4"
-            />
-            <SOR
-                sor="Financial management and financial economics"
-                class="fa-solid fa-graduation-cap fa-2xl pb-4"
-            />
-            <SOR 
-				sor="Open economy and international trade"
-				class="fa-solid fa-receipt fa-2xl pb-4" />
-            <SOR
-                sor="Publics economics and public policy"
-                class="fa-solid fa-sitemap fa-2xl pb-4"
-            />
-            <SOR
-                sor="Green economy and business sustainability"
-                class="fa-solid fa-users-between-lines fa-2xl pb-4"
-            />
-        </SORContainer>
-    </Container>
-	
-    <Container>
-        <Heading2 text="Timeline" />
-        <section class="timeline-section">
-            <div class="timeline">
-                {events.map((event) => (
-                    <div class={`timeline-item ${event.side}`}>
-                        <div class="content">
-                            <p class="date">{event.date}</p>
-                            <h3>{event.title}</h3>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </section>
-    </Container>
-	
-    <!-- <Container>
-        <Heading2 text="Guideline" />
-        <TableGuideline />
-    </Container> -->
-	
-    <Container>
-        <Heading2 text="Price" />
-        <section class="price-section">
-			<table class="price-table">
-				<thead>
-					<tr>
-						<th>CATEGORY</th>
-						<th>OFFLINE</th>
-						<th>ONLINE</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="section-row">
-						<td colspan="3">Conference</td>
-					</tr>
-					<tr>
-						<td>Lecturer/Practicioner/Public/Student S2-S3</td>
-						<td>IDR 250.000</td>
-						<td>IDR 200.000</td>
-					</tr>
-					<tr>
-						<td>Student D3/D4/S1</td>
-						<td>IDR 50.000</td>
-						<td>IDR 50.000</td>
-					</tr>
-					<tr class="section-row">
-						<td colspan="3">Call for Paper (International)</td>
-					</tr>
-					<tr>
-						<td>Presenter + Conference</td>
-						<td>IDR 750.000</td>
-						<td>IDR 650.000</td>
-					</tr>
-					<tr>
-						<td>Additional Articles/Author</td>
-						<td>IDR 600.000</td>
-						<td>IDR 500.000</td>
-					</tr>
 
-					<tr class="section-row">
-						<td colspan="3">Call for Paper (National)</td>
-					</tr>
-					<tr>
-						<td>Presenter + Conference</td>
-						<td>IDR 500.000</td>
-						<td>IDR 400.000</td>
-					</tr>
-					<tr>
-						<td>Additional Articles/Author</td>
-						<td>IDR 350.000</td>
-						<td>IDR 250.000</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-    </Container>
-	
-    <Container>
-        <Heading2 text="Submission and Registration" />
-        <ButtonContainer>
-            <Button
-                href="/paper/submission"
-                class="fa-solid fa-user-plus"
-                title="Paper Submission"
-                description="Click this button to submit your paper."
-            />
-        </ButtonContainer>
-        <ButtonContainer>
-            <Button
-                href="/paper/register"
-                class="fa-solid fa-user-plus"
-                title="Paper Registration"
-                description="Click this button to registration call for paper."
-            />
-        </ButtonContainer>
-    </Container>
-	
-    <Container>
-        <Heading2 text="Paper Template" />
-            <ButtonContainer>
-                <Heading3
-                    text="International"
-                />
-                <Button
-                    href="https://drive.google.com/uc?export=download&id=1xkoK4UQxPrD0dIAhE5x3UwCHTAfpedc5"
-                    class="fa-solid fa-download"
-                    title="Abstract Template"
-                    description="Click this button to download Abstract Template."
-                />
-            </ButtonContainer>
-            <ButtonContainer>
-                <Button
-                    href="https://drive.google.com/uc?export=download&id=1XJPSratas5NUiJjqdDst0C441QH1jHVZ "
-                    class="fa-solid fa-download"
-                    title="Full Paper Template"
-                    description="Click this button to download Full Paper Template."
-                />
-            </ButtonContainer>
-            <ButtonContainer>
-                <Heading3
-                    text="National"
-                />
-                <Button
-                    href="https://drive.google.com/uc?export=download&id=1dVOGJ8wriRZFRpNodTjI-y5uhAY81Q32 "
-                    class="fa-solid fa-download"
-                    title="Abstract Template"
-                    description="Click this button to download Abstract Template."
-                />
-            </ButtonContainer>
-            <ButtonContainer>
-                <Button
-                    href="https://drive.google.com/uc?export=download&id=1Bfyo2FBobkycBCslRj9fBnu3I0q2gx_R"
-                    class="fa-solid fa-download"
-                    title="Full Paper Template"
-                    description="Click this button to download Full Paper Template."
-                />
-            </ButtonContainer>
-    </Container>
-	
-    <Container>
-        <Heading2 text="Contact Us" />
-        <ContactContainer>
-            <Contact
-    media="WhatsApp"
-    class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
-    text="+62 823-2866-8422 (Ms. Ratih)"
-    href="https://wa.me/6282328668422"
-/>
+  <Jumbotron src="/jumbotron/paper-3.webp" />
 
-<Contact
-    media="WhatsApp"
-    class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
-    text="+62 812-8979-1081 (Mr. Ricky)"
-    href="https://wa.me/6281287971081"
-/>
-        </ContactContainer>
-    </Container>
-	
+  <Container>
+    <Paragraph text="As a form of contribution to the development of accounting science in Indonesia, this conference is supported by ACFE, APSAE, IAI, and indexed journals such as SINTA, DOAJ, ProQuest, and Google Scholar." />
+  </Container>
+
+  <Container>
+    <Heading2 text="INCAFA" />
+    <SORContainer>
+      <SOR sor="Financial Accounting" class="fa-solid fa-money-bill-trend-up" />
+      <SOR sor="Management Accounting" class="fa-solid fa-bars-progress" />
+      <SOR sor="Information Systems" class="fa-solid fa-user" />
+      <SOR sor="Taxation" class="fa-solid fa-star-and-crescent" />
+    </SORContainer>
+
+    <Heading2 text="ICELDT 2026" />
+    <SORContainer>
+      <SOR sor="Child Development" class="fa-solid fa-user" />
+      <SOR sor="Digital Learning" class="fa-solid fa-graduation-cap" />
+      <SOR sor="AI in Education" class="fa-solid fa-robot" />
+    </SORContainer>
+
+    <Heading2 text="ICMEDB" />
+    <SORContainer>
+      <SOR sor="Strategic Management" class="fa-solid fa-chart-line" />
+      <SOR sor="Digital Business" class="fa-solid fa-globe" />
+      <SOR sor="Financial Economics" class="fa-solid fa-coins" />
+    </SORContainer>
+  </Container>
+
+  <Container>
+    <Heading2 text="Timeline" />
+    <div>
+      {events.map((event) => (
+        <div>
+          <p>{event.date}</p>
+          <h3>{event.title}</h3>
+        </div>
+      ))}
+    </div>
+  </Container>
+
+  <Container>
+    <Heading2 text="Registration" />
+    <ButtonContainer>
+      <Button
+        href="/paper/submission"
+        class="fa-solid fa-user-plus"
+        title="Submit Paper"
+        description="Submit your paper here"
+      />
+    </ButtonContainer>
+  </Container>
+
+  <Container>
+    <Heading2 text="Contact" />
+    <ContactContainer>
+      <Contact
+        media="WhatsApp"
+        class="fa-brands fa-whatsapp"
+        text="+62 823-2866-8422"
+        href="https://wa.me/6282328668422"
+      />
+      <Contact
+        media="WhatsApp"
+        class="fa-brands fa-whatsapp"
+        text="+62 812-8979-1081"
+        href="https://wa.me/6281287971081"
+      />
+    </ContactContainer>
+  </Container>
+
 </Layout>
-
-<style>
-.timeline-section {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.timeline {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 2px;
-  background: #ccc;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  padding: 20px;
-  position: relative;
-  width: 50%;
-}
-
-.timeline-item.left {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-item.right {
-  left: 50%;
-  text-align: left;
-}
-
-.timeline-item::after {
-  content: "✔";
-  position: absolute;
-  top: 20px;
-  width: 20px;
-  height: 20px;
-  background: black;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 12px;
-  line-height: 20px;
-}
-
-.timeline-item.left::after {
-  right: -10px;
-}
-
-.timeline-item.right::after {
-  left: -10px;
-}
-
-.content {
-  padding: 10px 20px;
-}
-
-@media (max-width: 768px) {
-  .timeline-item {
-    width: 100%;
-    left: 0 !important;
-    text-align: left;
-    padding-left: 40px;
-  }
-
-  .timeline::after {
-    left: 20px;
-  }
-
-  .timeline-item::after {
-    left: 10px;
-  }
-}
-
-.price-section {
-  margin-top: 50px;
-}
-
-.price-table {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  border-collapse: collapse;
-}
-
-.price-table th {
-  text-align: left;
-  padding: 12px;
-  font-weight: bold;
-  border-bottom: 2px solid #ddd;
-}
-
-.price-table td {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-.section-row td {
-  font-weight: bold;
-  padding-top: 20px;
-  border-bottom: none;
-}
-</style>
