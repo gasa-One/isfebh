@@ -15,6 +15,29 @@ import Button from "../layouts/helpers/Button.astro";
 import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
 ---
 
+const events = [
+  {
+    date: "July 20th, 2026",
+	title: "Paper Submission Deadline", 
+	side: "left"
+  },
+  {
+    date: "August 7th, 2026",
+	title: "Paper Acceptance Announcement",
+	side: "right"
+  },
+  {
+    date: "August 14th, 2026",
+	title: "Registration & Payment Deadline",
+	side: "left"
+  },
+  {
+    date: "August 19th, 2026",
+	title: "Conference Day",
+	side: "right"
+  },
+];
+
 <Layout title="Call for Paper">
     <Jumbotron 
     src="/jumbotron/paper-3.webp" />
@@ -24,7 +47,7 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
         />
     </Container>
     <Container>
-        <Heading2 text="Scope of Research" />
+        <Heading2 text="International Conference on Accounting and Fraud Auditing (INCAFA)" />
         <SORContainer>
             <SOR
                 sor="Financial Accounting and Capital Markets (FACM)"
@@ -35,44 +58,194 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
                 class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
             />
             <SOR
-                sor="Public Sector Accounting (PSA)"
+                sor="Information Systems, Auditing, and Professional Ethics (SAPE)"
                 class="fa-solid fa-user fa-2xl pb-4"
             />
             <SOR
-                sor="Sharia Accounting (SRA)"
+                sor="Taxation (TAX)"
                 class="fa-solid fa-star-and-crescent fa-2xl pb-4"
             />
             <SOR
-                sor="Fraud and Forensic Accounting (FFA)"
+                sor="Sharia Accounting (SRA)"
                 class="fa-solid fa-building-shield fa-2xl pb-4"
             />
             <SOR
-                sor="Accounting Education (AEd)"
+                sor="Governance and Sustainability Accounting (GSA)"
                 class="fa-solid fa-graduation-cap fa-2xl pb-4"
             />
-            <SOR sor="Taxation (TAX)" class="fa-solid fa-receipt fa-2xl pb-4" />
             <SOR
-                sor="Information Systems, Auditing, and Professional Ethics (ISAPE)"
+                sor="Fraud and Forensic Accounting (FFA)"
                 class="fa-solid fa-sitemap fa-2xl pb-4"
             />
             <SOR
-                sor="Governance & Sustainability Accounting (GSA)"
+                sor="Public Sector Accounting (PSA)"
+                class="fa-solid fa-users-between-lines fa-2xl pb-4"
+            />
+			<SOR
+                sor="Accounting Education (AEd)"
+                class="fa-solid fa-users-between-lines fa-2xl pb-4"
+            />
+        </SORContainer>
+		<Heading2 text="International Conference on Education, Learning, and Digital Transformation (ICELDT 2026)"
+        <SORContainer>
+            <SOR
+                sor="Child Development and Learning"
+                class="fa-solid fa-money-bill-trend-up fa-2xl pb-4"
+            />
+            <SOR
+                sor="Early Childhood Education"
+                class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
+            />
+            <SOR
+                sor="Elementary Education"
+                class="fa-solid fa-user fa-2xl pb-4"
+            />
+            <SOR
+                sor="Digital Pedagody, Artificial Intelligence and Innovative Learning"
+                class="fa-solid fa-star-and-crescent fa-2xl pb-4"
+            />
+            <SOR
+                sor="Inclusive Digital Education"
+                class="fa-solid fa-building-shield fa-2xl pb-4"
+            />
+            <SOR
+                sor="Digital Assessment in Early Childhood and/or Primary Education"
+                class="fa-solid fa-graduation-cap fa-2xl pb-4"
+            />
+            <SOR
+				sor="Child Protection and Ethical use of digital technologies"
+				class="fa-solid fa-receipt fa-2xl pb-4" />
+            <SOR
+                sor="Teacher readiness for digital transformation"
+                class="fa-solid fa-sitemap fa-2xl pb-4"
+            />
+            <SOR
+                sor="Family Engagement in Digital Learning"
+                class="fa-solid fa-users-between-lines fa-2xl pb-4"
+            />
+            <SOR
+                sor="School-family partnerships"
+                class="fa-solid fa-users-between-lines fa-2xl pb-4"
+            />
+        </SORContainer>
+		<Heading2 text="International Conference on Management, Economics, and Digital Business (ICMEDB)"
+        <SORContainer>
+            <SOR
+                sor="Strategic and innovation management"
+                class="fa-solid fa-money-bill-trend-up fa-2xl pb-4"
+            />
+            <SOR
+                sor="Digital entrepreneurship and digital economics"
+                class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
+            />
+            <SOR
+                sor="Entrepreneurship, marketing management and consumber behavior"
+                class="fa-solid fa-user fa-2xl pb-4"
+            />
+            <SOR
+                sor="Organizational behavior and human resources studies"
+                class="fa-solid fa-star-and-crescent fa-2xl pb-4"
+            />
+            <SOR
+                sor="Industrial economics and development economics"
+                class="fa-solid fa-building-shield fa-2xl pb-4"
+            />
+            <SOR
+                sor="Financial management and financial economics"
+                class="fa-solid fa-graduation-cap fa-2xl pb-4"
+            />
+            <SOR 
+				sor="Open economy and international trade"
+				class="fa-solid fa-receipt fa-2xl pb-4" />
+            <SOR
+                sor="Publics economics and public policy"
+                class="fa-solid fa-sitemap fa-2xl pb-4"
+            />
+            <SOR
+                sor="Green economy and business sustainability"
                 class="fa-solid fa-users-between-lines fa-2xl pb-4"
             />
         </SORContainer>
     </Container>
+	
     <Container>
         <Heading2 text="Timeline" />
-        <DatePaper />
+        <section class="timeline-section">
+            <div class="timeline">
+                {events.map((event) => (
+                    <div class={`timeline-item ${event.side}`}>
+                        <div class="content">
+                            <p class="date">{event.date}</p>
+                            <h3>{event.title}</h3>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
     </Container>
+	
     <!-- <Container>
         <Heading2 text="Guideline" />
         <TableGuideline />
     </Container> -->
+	
     <Container>
         <Heading2 text="Price" />
-        <PricePaper />
+        <section class="price-section">
+			<table class="price-table">
+				<thead>
+					<tr>
+						<th>CATEGORY</th>
+						<th>OFFLINE</th>
+						<th>ONLINE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="section-row">
+						<td colspan="3">Conference</td>
+					</tr>
+					<tr>
+						<td>Lecturer/Practicioner/Public/Student S2-S3</td>
+						<td>IDR 250.000</td>
+						<td>IDR 200.000</td>
+					</tr>
+					<tr>
+						<td>Student D3/D4/S1</td>
+						<td>IDR 50.000</td>
+						<td>IDR 50.000</td>
+					</tr>
+					<tr class="section-row">
+						<td colspan="3">Call for Paper (International)</td>
+					</tr>
+					<tr>
+						<td>Presenter + Conference</td>
+						<td>IDR 750.000</td>
+						<td>IDR 650.000</td>
+					</tr>
+					<tr>
+						<td>Additional Articles/Author</td>
+						<td>IDR 600.000</td>
+						<td>IDR 500.000</td>
+					</tr>
+
+					<tr class="section-row">
+						<td colspan="3">Call for Paper (National)</td>
+					</tr>
+					<tr>
+						<td>Presenter + Conference</td>
+						<td>IDR 500.000</td>
+						<td>IDR 400.000</td>
+					</tr>
+					<tr>
+						<td>Additional Articles/Author</td>
+						<td>IDR 350.000</td>
+						<td>IDR 250.000</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
     </Container>
+	
     <Container>
         <Heading2 text="Submission and Registration" />
         <ButtonContainer>
@@ -92,6 +265,7 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
             />
         </ButtonContainer>
     </Container>
+	
     <Container>
         <Heading2 text="Paper Template" />
             <ButtonContainer>
@@ -133,39 +307,143 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
                 />
             </ButtonContainer>
     </Container>
+	
     <Container>
         <Heading2 text="Contact Us" />
         <ContactContainer>
             <Contact
-					media="WhatsApp"
-					,
-					class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
-					,
-					text="+62 851-5701-1792 (Ms. Endah)"
-					,
-					href="https://wa.me/6285157011792"
-					,
+				media="WhatsApp"
+				,
+				class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+				,
+				text="+62 823-2866-8422 (Ms. Ratih)"
+				,
+				href="https://wa.me/6282328668422"
+				,
 				/>
             <Contact
-                media="Email"
-                ,
-                class="fa-regular fa-envelope fa-2xl py-3 text-black"
-                ,
-                text="in-ncafa@trilogi.ac.id"
-                ,
-                href=""
-                ,
-            />
-            <Contact
-                media="Instagram"
-                ,
-                class="fa-brands fa-instagram fa-2xl py-3 text-black"
-                ,
-                text="@in.ncafatrilogi"
-                ,
-                href="https://www.instagram.com/in.ncafatrilogi"
-                ,
+				media="WhatsApp"
+				,
+				class="fa-brands fa-whatsapp fa-2xl py-3 text-black"
+				,
+				text="+62 812-8979-1081 (Mr. Ricky)"
+				,
+				href="https://wa.me/6281287971081"
+				,
             />
         </ContactContainer>
     </Container>
+	
 </Layout>
+
+<style>
+.timeline-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #ccc;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 20px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item::after {
+  content: "✔";
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: black;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.timeline-item.left::after {
+  right: -10px;
+}
+
+.timeline-item.right::after {
+  left: -10px;
+}
+
+.content {
+  padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    text-align: left;
+    padding-left: 40px;
+  }
+
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item::after {
+    left: 10px;
+  }
+}
+
+.price-section {
+  margin-top: 50px;
+}
+
+.price-table {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.price-table th {
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.price-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.section-row td {
+  font-weight: bold;
+  padding-top: 20px;
+  border-bottom: none;
+}
+</style>
