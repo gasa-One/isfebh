@@ -28,7 +28,7 @@ const keynoteSpeakers = [
   }
 ];
 
-const speakersDay1 = [
+const panelis = [
   {
     name: "Assoc Prof Szekee KOH, Ph.D (Singapore)",
     position: "Accounting Expert",
@@ -95,7 +95,7 @@ const speakersDay1 = [
   <Container>
     <Heading2 text="Panelis" />
 {
-      speakersDay1.map((s) => (
+      panelis.map((s) => (
         <div class="flex flex-col lg:flex-row items-center gap-6 my-4 w-3/4 mx-auto">
           <img class="w-40 rounded-lg shadow" src={s.image} />
           <div>
@@ -144,7 +144,7 @@ const speakersDay1 = [
       <Contact
         media="WhatsApp (Mrs. Ratih)"
         class="fa-brands fa-whatsapp"
-        text="+62 823-2866-8422
+        text="+62 823-2866-8422"
         href="#"
       />
       <Contact
