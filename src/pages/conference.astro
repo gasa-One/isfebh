@@ -14,7 +14,7 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
 
 const openingSpeakers = [
   {
-    name: "Prof. Dr. Example Opening",
+    name: "Prof. Dr. Pramono Hari Adi, MS.",
     position: "Rector, Trilogi University",
     image: "https://via.placeholder.com/200"
   }
@@ -22,24 +22,26 @@ const openingSpeakers = [
 
 const keynoteSpeakers = [
   {
-    name: "Dr. Keynote Speaker",
+    name: "Prof. Brian Yuliarto, S.T., M.Eng., Ph.D",
     position: "International Expert",
     image: "https://via.placeholder.com/200"
   }
 ];
 
-const speakersDay1 = [
+const panelis = [
   {
-    name: "Speaker 1",
+    name: "Assoc Prof Szekee KOH, Ph.D (Singapore)",
     position: "Accounting Expert",
     image: "https://via.placeholder.com/200"
-  }
-];
-
-const speakersDay2 = [
+  },
   {
-    name: "Speaker 2",
+    name: "Prof. Dr. Hamdan Daniel, Ph.D (Malaysia)",
     position: "Finance Specialist",
+    image: "https://via.placeholder.com/200"
+  },
+  {
+    name: "Prof. Dr. Siham El Kafafi (New Zealand)",
+    position: "Accounting Expert",
     image: "https://via.placeholder.com/200"
   }
 ];
@@ -91,33 +93,7 @@ const speakersDay2 = [
 
   <!-- SPEAKER -->
   <Container>
-    <Heading2 text="Speaker" />
-
-    <Heading3 text="Day 1" />
-    {
-      speakersDay1.map((s) => (
-        <div class="flex flex-col lg:flex-row items-center gap-6 my-4 w-3/4 mx-auto">
-          <img class="w-40 rounded-lg shadow" src={s.image} />
-          <div>
-            <h2 class="text-xl font-bold">{s.name}</h2>
-            <p class="text-gray-500">{s.position}</p>
-          </div>
-        </div>
-      ))
-    }
-
-    <Heading3 text="Day 2" />
-    {
-      speakersDay2.map((s) => (
-        <div class="flex flex-col lg:flex-row items-center gap-6 my-4 w-3/4 mx-auto">
-          <img class="w-40 rounded-lg shadow" src={s.image} />
-          <div>
-            <h2 class="text-xl font-bold">{s.name}</h2>
-            <p class="text-gray-500">{s.position}</p>
-          </div>
-        </div>
-      ))
-    }
+    <Heading2 text="Panelis" />
   </Container>
 
   <!-- TIMELINE -->
@@ -150,15 +126,15 @@ const speakersDay2 = [
     <Heading2 text="Contact Us" />
     <ContactContainer>
       <Contact
-        media="WhatsApp"
+        media="WhatsApp (Mrs. Ratih)"
         class="fa-brands fa-whatsapp"
-        text="+62 xxx"
+        text="+62 823-2866-8422
         href="#"
       />
       <Contact
-        media="Email"
-        class="fa-regular fa-envelope"
-        text="email@example.com"
+        media="Email (Mr. Ricky)"
+        class="fa-brands fa-whatsapp"
+        text="+62 812-8797-1081"
         href="#"
       />
     </ContactContainer>
