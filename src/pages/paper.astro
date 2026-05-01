@@ -24,43 +24,51 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
         />
     </Container>
     <Container>
-        <Heading2 text="Scope of Research" />
-        <SORContainer>
-            <SOR
-                sor="Financial Accounting and Capital Markets (FACM)"
-                class="fa-solid fa-money-bill-trend-up fa-2xl pb-4"
-            />
-            <SOR
-                sor="Management and Behavioral Accounting (MBA)"
-                class="fa-solid fa-bars-progress fa-2xl pb-4 h-1/2"
-            />
-            <SOR
-                sor="Public Sector Accounting (PSA)"
-                class="fa-solid fa-user fa-2xl pb-4"
-            />
-            <SOR
-                sor="Sharia Accounting (SRA)"
-                class="fa-solid fa-star-and-crescent fa-2xl pb-4"
-            />
-            <SOR
-                sor="Fraud and Forensic Accounting (FFA)"
-                class="fa-solid fa-building-shield fa-2xl pb-4"
-            />
-            <SOR
-                sor="Accounting Education (AEd)"
-                class="fa-solid fa-graduation-cap fa-2xl pb-4"
-            />
-            <SOR sor="Taxation (TAX)" class="fa-solid fa-receipt fa-2xl pb-4" />
-            <SOR
-                sor="Information Systems, Auditing, and Professional Ethics (ISAPE)"
-                class="fa-solid fa-sitemap fa-2xl pb-4"
-            />
-            <SOR
-                sor="Governance & Sustainability Accounting (GSA)"
-                class="fa-solid fa-users-between-lines fa-2xl pb-4"
-            />
-        </SORContainer>
-    </Container>
+  <Heading2 text="Conference Posters" />
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+
+    <!-- POSTER 1 -->
+    <div class="flex flex-col items-center">
+      <img src="/poster/poster1.jpg" class="rounded-xl shadow-lg hover:scale-105 transition duration-300" />
+
+      <a
+        href="/poster/poster1.jpg"
+        download
+        class="mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm"
+      >
+        Download Poster
+      </a>
+    </div>
+
+    <!-- POSTER 2 -->
+    <div class="flex flex-col items-center">
+      <img src="/poster/poster2.jpg" class="rounded-xl shadow-lg hover:scale-105 transition duration-300" />
+
+      <a
+        href="/poster/poster2.jpg"
+        download
+        class="mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm"
+      >
+        Download Poster
+      </a>
+    </div>
+
+    <!-- POSTER 3 -->
+    <div class="flex flex-col items-center">
+      <img src="/poster/poster3.jpg" class="rounded-xl shadow-lg hover:scale-105 transition duration-300" />
+
+      <a
+        href="/poster/poster3.jpg"
+        download
+        class="mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm"
+      >
+        Download Poster
+      </a>
+    </div>
+
+  </div>
+</Container>
     <Container>
         <Heading2 text="Timeline" />
         <DatePaper />
