@@ -32,13 +32,17 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
     <div class="flex flex-col items-center">
       <img src="/jumbotron/Flyer.png" class="rounded-xl shadow-lg hover:scale-105 transition duration-300" />
 
-      <a
-        href="/jumbotron/Flyer.png"
-        download
-        class="mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm"
-      >
-        Download Poster
-      </a>
+      <Container>
+        <Heading2 text="Submission and Registration" />
+        <ButtonContainer>
+            <Button
+                href="/paper/submission"
+                class="fa-solid fa-user-plus"
+                title="Paper Submission"
+                description="Click this button to submit your paper."
+            />
+        </ButtonContainer>
+      </Container>
     </div>
 
     <!-- POSTER 2 -->
