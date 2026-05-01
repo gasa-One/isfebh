@@ -29,45 +29,54 @@ import ButtonContainer from "../layouts/helpers/ButtonContainer.astro";
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
 
     <!-- POSTER 1 -->
-    <div class="flex flex-col items-center">
-      <img src="/jumbotron/Flyer.png" class="rounded-xl shadow-lg hover:scale-105 transition duration-300" />
+    <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center hover:-translate-y-2 transition duration-300">
+      <img src="/jumbotron/Flyer.png" class="rounded-lg mb-4" />
 
-      <Container>
-        <Heading2 text="Submission and Registration" />
-        <ButtonContainer>
-            <Button
-                href="/paper/submission"
-                class="fa-solid fa-user-plus"
-                title="Paper Submission"
-                description="Click this button to submit your paper."
-            />
-        </ButtonContainer>
-      </Container>
+      <h3 class="text-lg font-semibold mb-2">
+        Submission & Registration
+      </h3>
+
+      <a
+        href="/paper/submission"
+        class="mt-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm flex items-center gap-2"
+      >
+        <i class="fa-solid fa-user-plus"></i>
+        Submit Paper
+      </a>
     </div>
 
     <!-- POSTER 2 -->
-    <div class="flex flex-col items-center">
-      <img src="/jumbotron/Flyer.png" class="rounded-xl shadow-lg hover:scale-105 transition duration-300" />
+    <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center hover:-translate-y-2 transition duration-300">
+      <img src="/jumbotron/Flyer.png" class="rounded-lg mb-4" />
+
+      <h3 class="text-lg font-semibold mb-2">
+        Conference Registration
+      </h3>
 
       <a
-        href="/jumbotron/Flyer.png"
-        download
-        class="mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm"
+        href="/conference/registration"
+        class="mt-2 bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm flex items-center gap-2"
       >
-        Download Poster
+        <i class="fa-solid fa-ticket"></i>
+        Register Now
       </a>
     </div>
 
     <!-- POSTER 3 -->
-    <div class="flex flex-col items-center">
-      <img src="/jumbotron/Flyer.png" class="rounded-xl shadow-lg hover:scale-105 transition duration-300" />
+    <div class="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center text-center hover:-translate-y-2 transition duration-300">
+      <img src="/jumbotron/Flyer.png" class="rounded-lg mb-4" />
+
+      <h3 class="text-lg font-semibold mb-2">
+        Download Poster
+      </h3>
 
       <a
         href="/jumbotron/Flyer.png"
         download
-        class="mt-4 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full text-sm"
+        class="mt-2 bg-gray-800 hover:bg-gray-900 text-white px-5 py-2 rounded-full text-sm flex items-center gap-2"
       >
-        Download Poster
+        <i class="fa-solid fa-download"></i>
+        Download
       </a>
     </div>
 
