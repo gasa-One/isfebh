@@ -85,58 +85,61 @@ const journals = [
     <Heading2 text="Journal Partners" />
 
     <!-- GRID -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center my-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-6">
 
-      {
-        journals.map(item => (
-          <div class="group w-[280px] bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border">
+  {
+    journals.map(item => (
+      <div class="group w-full h-full bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 overflow-hidden border flex flex-col">
 
-            <!-- LOGO -->
-            <div class="h-[160px] flex items-center justify-center bg-gray-50 p-4">
-              <img class="max-h-full object-contain group-hover:scale-110 transition duration-300"
-                   src={item.logo} />
-            </div>
+        <!-- LOGO -->
+        <div class="h-[160px] flex items-center justify-center bg-gray-50 p-4">
+          <img 
+            class="max-h-full object-contain group-hover:scale-110 transition duration-300"
+            src={item.logo} 
+            alt={item.nama}
+          />
+        </div>
 
-            <!-- CONTENT -->
-            <div class="p-4 text-center space-y-2">
+        <!-- CONTENT -->
+        <div class="p-4 text-center flex flex-col flex-1">
 
-              <!-- TITLE -->
-              <a href={item.website} target="_blank">
-                <h5 class="font-bold text-lg hover:text-blue-600 transition">
-                  {item.nama}
-                </h5>
-              </a>
+          <!-- TITLE -->
+          <a href={item.website} target="_blank">
+            <h5 class="font-bold text-lg hover:text-blue-600 transition mb-2">
+              {item.nama}
+            </h5>
+          </a>
 
-              <!-- AFILIASI -->
-              <p class="text-sm text-gray-500">
-                {item.afiliasi}
-              </p>
+          <!-- AFILIASI -->
+          <p class="text-sm text-gray-500 mb-2">
+            {item.afiliasi}
+          </p>
 
-              <!-- BADGE -->
-              <div class="flex justify-center gap-2 flex-wrap mt-2">
+          <!-- BADGE -->
+          <div class="flex justify-center gap-2 flex-wrap mb-2">
 
-                <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700 font-medium">
-                  {item.index}
-                </span>
+            <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700 font-medium">
+              {item.index}
+            </span>
 
-                <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700 font-medium">
-                  {item.tier}
-                </span>
+            <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-700 font-medium">
+              {item.tier}
+            </span>
 
-              </div>
-
-              <!-- SCOPE -->
-              <p class="text-xs text-gray-600 mt-2 line-clamp-2 md:line-clamp-3 lg:line-clamp-4">
-                {item.scope}
-              </p>
-
-            </div>
           </div>
-        ))
-      }
 
-    </div>
+          <!-- SCOPE -->
+          <p class="text-xs text-gray-600 mt-auto">
+            {item.scope}
+          </p>
 
+        </div>
+
+      </div>
+    ))
+  }
+
+</div>
     <HeadingMini text="more to be announce" />
 
   </Container>
