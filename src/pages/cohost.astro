@@ -10,19 +10,19 @@ import HeadingMini from "../layouts/components/HeadingMini.astro";
 <Layout title="Co-Host">
 
   <Container>
-    <Heading2 text="Co-Host" />
+    <Heading2 text="Co-Host Universities" />
 
     <!-- LOADING -->
     <div id="loading" class="text-center py-10 text-gray-500">
       Loading co-host data...
     </div>
 
-    <!-- GRID -->
+    <!-- FLEX GRID -->
     <div id="cohost-container"
-         class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center my-6">
+         class="hidden flex flex-wrap justify-center gap-10 my-10">
     </div>
 
-    <HeadingMini text="more to be announce" />
+    <HeadingMini text="More to be announced" />
   </Container>
 
   <!-- CONTACT -->
@@ -56,6 +56,59 @@ import HeadingMini from "../layouts/components/HeadingMini.astro";
   const container = document.getElementById("cohost-container");
   const loading = document.getElementById("loading");
 
+  // ✅ FALLBACK DATA (kalau API error / kosong)
+  const dummyData = [
+    {
+      nama: "Universitas Islam As-Syafi’iyah",
+      logo: "https://upload.wikimedia.org/wikipedia/id/6/6f/Logo_UIA.png",
+      url: "#"
+    },
+    {
+      nama: "Universitas Al Azhar Indonesia",
+      logo: "https://upload.wikimedia.org/wikipedia/id/5/5c/Logo_UAI.png",
+      url: "#"
+    },
+    {
+      nama: "Universitas INABA",
+      logo: "https://upload.wikimedia.org/wikipedia/id/2/2c/Logo_INABA.png",
+      url: "#"
+    },
+    {
+      nama: "Institut Bisnis & Informatika Kesatuan",
+      logo: "https://upload.wikimedia.org/wikipedia/id/0/0e/Logo_IBIK.png",
+      url: "#"
+    },
+    {
+      nama: "Universitas Katolik Indonesia Atma Jaya Jakarta",
+      logo: "https://upload.wikimedia.org/wikipedia/id/8/8c/Logo_Atma_Jaya.png",
+      url: "#"
+    }
+  ];
+
+  function renderData(data) {
+    container.innerHTML = data
+      .sort((a, b) => a.nama.localeCompare(b.nama))
+      .map(item => `
+        <a href="${item.url}" target="_blank"
+           class="group w-[260px] bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300 text-center overflow-hidden">
+
+          <!-- LOGO -->
+          <div class="h-[140px] flex items-center justify-center bg-gray-50 p-4">
+            <img class="max-h-full object-contain group-hover:scale-110 transition duration-300"
+                 src="${item.logo}" />
+          </div>
+
+          <!-- NAME -->
+          <div class="p-4">
+            <h5 class="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition leading-snug">
+              ${item.nama}
+            </h5>
+          </div>
+
+        </a>
+      `).join("");
+  }
+
   async function fetchCohost() {
     try {
       const res = await fetch("https://data.jetadmin.app/projects/inncafa/prod/googlesheets_k55r/models/co-host", {
@@ -69,31 +122,19 @@ import HeadingMini from "../layouts/components/HeadingMini.astro";
       loading.style.display = "none";
       container.classList.remove("hidden");
 
-      container.innerHTML = data.results
-        .sort((a, b) => a.nama.localeCompare(b.nama))
-        .map(item => `
-          <a href="${item.url}" target="_blank"
-             class="group w-[220px] bg-white border rounded-xl shadow-md hover:shadow-xl transition duration-300 text-center overflow-hidden">
-
-            <!-- LOGO -->
-            <div class="h-[120px] flex items-center justify-center bg-gray-50 p-3">
-              <img class="max-h-full object-contain group-hover:scale-110 transition duration-300"
-                   src="${item.logo}" />
-            </div>
-
-            <!-- NAME -->
-            <div class="p-3">
-              <h5 class="text-sm font-semibold text-gray-700 group-hover:text-blue-600 transition">
-                ${item.nama}
-              </h5>
-            </div>
-
-          </a>
-        `).join("");
+      if (data.results && data.results.length > 0) {
+        renderData(data.results);
+      } else {
+        renderData(dummyData);
+      }
 
     } catch (err) {
-      loading.innerText = "Failed to load co-host data";
       console.error(err);
+      loading.style.display = "none";
+      container.classList.remove("hidden");
+
+      // fallback tampilkan dummy
+      renderData(dummyData);
     }
   }
 
